@@ -14582,10 +14582,20 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Ejercicio-2">Ejercicio 2<a class="anchor-link" href="#Ejercicio-2">&#182;</a></h1><p>Para el ejercicio 2, se han seleccionado tres fuentes, cada una relacionada con la temática de los premios Nobel de Química:</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Chemistry">Fuente 1</a>: Tabla con los ganadores de los premios Nobel en Química, clasificados por año, nombre y país de procedencia. Cabe notar que, en caso el ganador cuente con varias nacionalidades, se reporta más de un país.</li>
-<li><a href="https://en.wikipedia.org/wiki/List_of_nominees_for_the_Nobel_Prize_in_Chemistry">Fuente 2</a>: Nominados al premio Nobel de Química desde 1901 a 1970. El Comité Noruego del Nobel revela la lista de nominados hasta 50 años después de la fecha de nominación. Por esta razón, hasta la fecha, se cuenta con la lista oficial de nominados hasta 1973. Sin embargo, en la fuente que se empleará, solo se tiene información hasta 1970.</li>
-<li><a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_university_affiliation">Fuente 3</a>: Tabla con todos los ganadores de los premios Nobel, clasificados acorde a su afiliación a determinado instituto o universidad. Se deberá limpiar la tabla para filtrar solo los ganadores correspondientes al premio Nobel de Química.</li>
+<li><p><a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Chemistry">Fuente 1</a>: Tabla con los ganadores de los premios Nobel en Química, clasificados por año, nombre y país de procedencia. Cabe notar que, en caso el ganador cuente con varias nacionalidades, se reporta más de un país y se han limpiado los datos para incluir únicamente el país de nacimiento.</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/List_of_nominees_for_the_Nobel_Prize_in_Chemistry">Fuente 2</a>: Nominados al premio Nobel de Química desde 1901 a 1970. El Comité Noruego del Nobel revela la lista de nominados hasta 50 años después de la fecha de nominación. Por esta razón, hasta la fecha, se cuenta con la lista oficial de nominados hasta 1973. Sin embargo, en la fuente que se empleará, solo se tiene información hasta 1970.</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_university_affiliation">Fuente 3</a>: Tabla con todos los ganadores de los premios Nobel, clasificados acorde a su afiliación a determinado instituto o universidad. Se deberá limpiar la tabla para filtrar solo los ganadores correspondientes al premio Nobel de Química.</p>
+</li>
 </ul>
+<p>Se han limpiado las fuentes para obtener tres DataFrames (DFs) con las siguientes variables:</p>
+<ul>
+<li>Fuente 1: <strong>'Year_of_award', 'Laureate', 'Rationale', 'Birth_year', 'Death_year','Country_of_birth'.</strong></li>
+<li>Fuente 2: 'Years_Nominated', <strong>'Nominees'</strong></li>
+<li>Fuente 3: 'Laureate', 'Year_of_award', <strong>'Affiliation'</strong></li>
+</ul>
+<p><em>Nota</em>: Se encuentran resaltadas las variables que se conservarán en el DataFrame resultante de la unión de las tres y que se unirá con el archivo adjunto (country_isos.xlsx)</p>
 
 </div>
 </div>
@@ -14606,7 +14616,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1404]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14631,7 +14641,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1404]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 
 
 
@@ -14651,7 +14661,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1405]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">Laureates</span><span class="p">)</span>
@@ -14672,7 +14682,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1405]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
@@ -14692,7 +14702,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1463]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Laureates</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">LaureatesLink</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">flavor</span><span class="o">=</span><span class="s1">'bs4'</span><span class="p">)</span>
@@ -14715,7 +14725,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1463]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
@@ -14874,7 +14884,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1467]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Laureates</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">LaureatesLink</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">flavor</span><span class="o">=</span><span class="s1">'bs4'</span><span class="p">)</span>
@@ -14915,7 +14925,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1467]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -15063,7 +15073,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1468]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Limpiando la columna "Laureate" para que solo se encuentren los nombres de los ganadores</span>
@@ -15094,7 +15104,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1468]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -15242,7 +15252,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1408]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Reemplazando valores "None" en la segunda columna con "Alive"</span>
@@ -15259,7 +15269,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1471]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Limpiando la columna 'Country'</span>
@@ -15282,7 +15292,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1471]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -15353,7 +15363,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1472]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Solo se mantendrá el primer país, porque corresponde al país de nacimiento</span>
@@ -15384,7 +15394,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1472]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -15431,7 +15441,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1473]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Dataframe resultante</span>
@@ -15454,7 +15464,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1473]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -15546,7 +15556,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>Morten Meldal</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1954</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Denmark</td>
     </tr>
     <tr>
@@ -15555,7 +15565,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>K. Barry Sharpless</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -15564,7 +15574,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>Moungi G. Bawendi</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1961</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -15573,7 +15583,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>Louis E. Brus</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1943</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -15582,7 +15592,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>Alexey Ekimov</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1945</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Russia</td>
     </tr>
   </tbody>
@@ -15613,7 +15623,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1479]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -15638,7 +15648,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1479]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
@@ -15658,7 +15668,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1480]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Nominees</span><span class="p">))</span>
@@ -15679,7 +15689,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1480]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
 
@@ -15699,7 +15709,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1481]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#El primer elemento de la lista es un DF que contiene adjuntos verticalmente datos de los nominados de 1901 a 1909</span>
@@ -15721,7 +15731,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1481]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
@@ -16302,7 +16312,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1482]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Función cotas: permite encontrar el intervalo de filas donde se encuentran los nominados por cada año</span>
@@ -16337,7 +16347,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1482]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -16385,7 +16395,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1483]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#DFs de 1901-1909</span>
@@ -16420,7 +16430,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1484]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Concatenando los DFs de cada lista</span>
@@ -16456,7 +16466,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1484]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
 
@@ -16627,7 +16637,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1486]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">NomineesAllDFs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">NomineesList</span><span class="p">)</span>
@@ -16659,7 +16669,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1486]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
 
@@ -16771,7 +16781,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1487]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Limpieza de la columna años de nominación</span>
@@ -16800,7 +16810,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1487]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
 
 
@@ -16912,7 +16922,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1488]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Ordenando el DF por año (una fila para cada año de nominación. Ejm: 1901,1902 -&gt; 2 filas )</span>
@@ -16940,7 +16950,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1488]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
 
@@ -17052,7 +17062,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1490]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Transformación de la tabla a horizontal</span>
@@ -17080,7 +17090,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1490]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
 
@@ -17452,7 +17462,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1494]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Identificación de las filas de nominados, donde hay error en los años</span>
@@ -17476,7 +17486,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1494]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -17539,7 +17549,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1495]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Corrección de los datos</span>
@@ -17575,7 +17585,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1495]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
@@ -17687,7 +17697,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1496]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Para realizar merge con las otras dos fuentes, se agruparán los nominados por año</span>
@@ -17717,7 +17727,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1496]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
@@ -17828,7 +17838,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1497]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -17853,7 +17863,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1497]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
@@ -17873,7 +17883,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1503]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Affiliation</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -17894,7 +17904,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1503]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
@@ -18029,7 +18039,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1500]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Affiliation</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span>
@@ -18050,7 +18060,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1500]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
@@ -18070,7 +18080,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1504]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Creando un DF solo con los ganadores al premio Nobel de Química</span>
@@ -18099,7 +18109,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1504]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
 
 
@@ -18211,7 +18221,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1428]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Ordenando los datos de forma ascendente por año</span>
@@ -18235,7 +18245,7 @@ Parámetros:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1428]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
 
 
@@ -18370,7 +18380,7 @@ Parámetros:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1505]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Verificando que los datos en ambas columnas sean del mismo tipo</span>
@@ -18414,7 +18424,7 @@ Data columns (total 6 columns):
  1   Laureate          202 non-null    object
  2   Rationale         202 non-null    object
  3   Birth_year        202 non-null    object
- 4   Death_year        131 non-null    object
+ 4   Death_year        202 non-null    object
  5   Country_of_birth  202 non-null    object
 dtypes: int64(1), object(5)
 memory usage: 9.6+ KB
@@ -18425,7 +18435,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1505]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
 
 
@@ -18445,7 +18455,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1506]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merging</span>
@@ -18469,7 +18479,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1506]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 
 
 
@@ -18569,7 +18579,7 @@ memory usage: 9.6+ KB
       <td>Morten Meldal</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1954</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Denmark</td>
     </tr>
     <tr>
@@ -18579,7 +18589,7 @@ memory usage: 9.6+ KB
       <td>K. Barry Sharpless</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -18589,7 +18599,7 @@ memory usage: 9.6+ KB
       <td>Moungi G. Bawendi</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1961</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -18599,7 +18609,7 @@ memory usage: 9.6+ KB
       <td>Louis E. Brus</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1943</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -18609,7 +18619,7 @@ memory usage: 9.6+ KB
       <td>Alexey Ekimov</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1945</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Russia</td>
     </tr>
   </tbody>
@@ -18664,7 +18674,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1507]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filas donde se observan duplicados en las columnas 'Laureate' y 'Year_Won'</span>
@@ -18688,7 +18698,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1507]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 
 
 
@@ -18718,256 +18728,256 @@ memory usage: 9.6+ KB
   </thead>
   <tbody>
     <tr>
-      <th>56</th>
-      <td>Friedrich Bergius</td>
-      <td>1931</td>
-      <td>Heidelberg University</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>Friedrich Bergius</td>
-      <td>1931</td>
-      <td>IG Farben</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>Carolyn Bertozzi</td>
-      <td>2022</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>Carolyn Bertozzi</td>
-      <td>2022</td>
-      <td>Stanford University</td>
-    </tr>
-    <tr>
-      <th>80</th>
+      <th>28</th>
       <td>Carl Bosch</td>
       <td>1931</td>
       <td>Heidelberg University</td>
     </tr>
     <tr>
-      <th>81</th>
+      <th>29</th>
+      <td>Friedrich Bergius</td>
+      <td>1931</td>
+      <td>Heidelberg University</td>
+    </tr>
+    <tr>
+      <th>30</th>
       <td>Carl Bosch</td>
       <td>1931</td>
       <td>IG Farben</td>
     </tr>
     <tr>
-      <th>103</th>
-      <td>Adolf Butenandt</td>
-      <td>1939</td>
-      <td>Humboldt University of Berlin</td>
+      <th>31</th>
+      <td>Friedrich Bergius</td>
+      <td>1931</td>
+      <td>IG Farben</td>
     </tr>
     <tr>
-      <th>104</th>
-      <td>Adolf Butenandt</td>
-      <td>1939</td>
-      <td>Max Planck Institute of Biochemistry</td>
-    </tr>
-    <tr>
-      <th>157</th>
+      <th>36</th>
       <td>Peter Debye</td>
       <td>1936</td>
       <td>Humboldt University of Berlin</td>
     </tr>
     <tr>
-      <th>158</th>
+      <th>37</th>
       <td>Peter Debye</td>
       <td>1936</td>
       <td>Max Planck Institute for Physics</td>
     </tr>
     <tr>
-      <th>160</th>
-      <td>Johann Deisenhofer</td>
-      <td>1988</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>Johann Deisenhofer</td>
-      <td>1988</td>
-      <td>University of Texas Southwestern Medical Center</td>
-    </tr>
-    <tr>
-      <th>289</th>
-      <td>Stefan Hell</td>
-      <td>2014</td>
-      <td>German Cancer Research Center</td>
-    </tr>
-    <tr>
-      <th>290</th>
-      <td>Stefan Hell</td>
-      <td>2014</td>
-      <td>Max Planck Institute for Biophysical Chemistry</td>
-    </tr>
-    <tr>
-      <th>354</th>
-      <td>Martin Karplus</td>
-      <td>2013</td>
-      <td>Harvard University</td>
-    </tr>
-    <tr>
-      <th>355</th>
-      <td>Martin Karplus</td>
-      <td>2013</td>
-      <td>University of Strasbourg</td>
-    </tr>
-    <tr>
-      <th>389</th>
+      <th>40</th>
       <td>Richard Kuhn</td>
       <td>1938</td>
       <td>Heidelberg University</td>
     </tr>
     <tr>
-      <th>390</th>
+      <th>41</th>
       <td>Richard Kuhn</td>
       <td>1938</td>
       <td>Max Planck Institute for Medical Research</td>
     </tr>
     <tr>
-      <th>409</th>
-      <td>Robert Lefkowitz</td>
-      <td>2012</td>
-      <td>Duke University Medical Center</td>
+      <th>42</th>
+      <td>Adolf Butenandt</td>
+      <td>1939</td>
+      <td>Max Planck Institute of Biochemistry</td>
     </tr>
     <tr>
-      <th>410</th>
-      <td>Robert Lefkowitz</td>
-      <td>2012</td>
-      <td>Howard Hughes Medical Institute</td>
+      <th>43</th>
+      <td>Adolf Butenandt</td>
+      <td>1939</td>
+      <td>Humboldt University of Berlin</td>
     </tr>
     <tr>
-      <th>412</th>
-      <td>Jean-Marie Lehn</td>
-      <td>1987</td>
-      <td>Collège de France</td>
-    </tr>
-    <tr>
-      <th>413</th>
-      <td>Jean-Marie Lehn</td>
-      <td>1987</td>
-      <td>Louis Pasteur University</td>
-    </tr>
-    <tr>
-      <th>422</th>
-      <td>Tomas Lindahl</td>
-      <td>2015</td>
-      <td>Clare Hall laboratories</td>
-    </tr>
-    <tr>
-      <th>423</th>
-      <td>Tomas Lindahl</td>
-      <td>2015</td>
-      <td>Francis Crick Institute</td>
-    </tr>
-    <tr>
-      <th>438</th>
-      <td>Roderick MacKinnon</td>
-      <td>2003</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>439</th>
-      <td>Roderick MacKinnon</td>
-      <td>2003</td>
-      <td>Rockefeller University</td>
-    </tr>
-    <tr>
-      <th>479</th>
-      <td>Paul L. Modrich</td>
-      <td>2015</td>
-      <td>Duke University School of Medicine</td>
-    </tr>
-    <tr>
-      <th>480</th>
-      <td>Paul L. Modrich</td>
-      <td>2015</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>575</th>
-      <td>Ilya Prigogine</td>
-      <td>1977</td>
-      <td>Université libre de Bruxelles</td>
-    </tr>
-    <tr>
-      <th>576</th>
-      <td>Ilya Prigogine</td>
-      <td>1977</td>
-      <td>University of Texas at Austin</td>
-    </tr>
-    <tr>
-      <th>652</th>
-      <td>Nikolay Semyonov</td>
-      <td>1956</td>
-      <td>Institute for Chemical Physics of the Academy ...</td>
-    </tr>
-    <tr>
-      <th>653</th>
+      <th>64</th>
       <td>Nikolay Semyonov</td>
       <td>1956</td>
       <td>Moscow State University</td>
     </tr>
     <tr>
-      <th>663</th>
-      <td>Osamu Shimomura</td>
-      <td>2008</td>
-      <td>Boston University School of Medicine</td>
+      <th>65</th>
+      <td>Nikolay Semyonov</td>
+      <td>1956</td>
+      <td>Institute for Chemical Physics of the Academy ...</td>
     </tr>
     <tr>
-      <th>664</th>
-      <td>Osamu Shimomura</td>
-      <td>2008</td>
-      <td>Marine Biological Laboratory</td>
+      <th>94</th>
+      <td>Ilya Prigogine</td>
+      <td>1977</td>
+      <td>University of Texas at Austin</td>
     </tr>
     <tr>
-      <th>693</th>
-      <td>Thomas A. Steitz</td>
-      <td>2009</td>
+      <th>95</th>
+      <td>Ilya Prigogine</td>
+      <td>1977</td>
+      <td>Université libre de Bruxelles</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>Jean-Marie Lehn</td>
+      <td>1987</td>
+      <td>Louis Pasteur University</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>Jean-Marie Lehn</td>
+      <td>1987</td>
+      <td>Collège de France</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>Johann Deisenhofer</td>
+      <td>1988</td>
+      <td>University of Texas Southwestern Medical Center</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>Johann Deisenhofer</td>
+      <td>1988</td>
       <td>Howard Hughes Medical Institute</td>
     </tr>
     <tr>
-      <th>694</th>
-      <td>Thomas A. Steitz</td>
-      <td>2009</td>
-      <td>Yale University</td>
-    </tr>
-    <tr>
-      <th>742</th>
-      <td>Roger Y. Tsien</td>
-      <td>2008</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>743</th>
-      <td>Roger Y. Tsien</td>
-      <td>2008</td>
-      <td>University of California, San Diego</td>
-    </tr>
-    <tr>
-      <th>791</th>
-      <td>Kurt Wüthrich</td>
-      <td>2002</td>
-      <td>ETH Zurich</td>
-    </tr>
-    <tr>
-      <th>792</th>
+      <th>144</th>
       <td>Kurt Wüthrich</td>
       <td>2002</td>
       <td>Scripps Research</td>
     </tr>
     <tr>
-      <th>798</th>
+      <th>147</th>
+      <td>Kurt Wüthrich</td>
+      <td>2002</td>
+      <td>ETH Zurich</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>Roderick MacKinnon</td>
+      <td>2003</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>Roderick MacKinnon</td>
+      <td>2003</td>
+      <td>Rockefeller University</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>Roger Y. Tsien</td>
+      <td>2008</td>
+      <td>University of California, San Diego</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>Osamu Shimomura</td>
+      <td>2008</td>
+      <td>Boston University School of Medicine</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>Osamu Shimomura</td>
+      <td>2008</td>
+      <td>Marine Biological Laboratory</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>Roger Y. Tsien</td>
+      <td>2008</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>Thomas A. Steitz</td>
+      <td>2009</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>Thomas A. Steitz</td>
+      <td>2009</td>
+      <td>Yale University</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>Robert Lefkowitz</td>
+      <td>2012</td>
+      <td>Duke University Medical Center</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>Robert Lefkowitz</td>
+      <td>2012</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>Martin Karplus</td>
+      <td>2013</td>
+      <td>University of Strasbourg</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>Martin Karplus</td>
+      <td>2013</td>
+      <td>Harvard University</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>Stefan Hell</td>
+      <td>2014</td>
+      <td>Max Planck Institute for Biophysical Chemistry</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>Stefan Hell</td>
+      <td>2014</td>
+      <td>German Cancer Research Center</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>Paul L. Modrich</td>
+      <td>2015</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Paul L. Modrich</td>
+      <td>2015</td>
+      <td>Duke University School of Medicine</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Tomas Lindahl</td>
+      <td>2015</td>
+      <td>Francis Crick Institute</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>Tomas Lindahl</td>
+      <td>2015</td>
+      <td>Clare Hall laboratories</td>
+    </tr>
+    <tr>
+      <th>198</th>
       <td>Akira Yoshino</td>
       <td>2019</td>
       <td>Asahi Kasei</td>
     </tr>
     <tr>
-      <th>799</th>
+      <th>199</th>
       <td>Akira Yoshino</td>
       <td>2019</td>
       <td>Meijo University</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>Carolyn Bertozzi</td>
+      <td>2022</td>
+      <td>Stanford University</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>Carolyn Bertozzi</td>
+      <td>2022</td>
+      <td>Howard Hughes Medical Institute</td>
     </tr>
   </tbody>
 </table>
@@ -18985,7 +18995,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1508]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Agrupación de las filas correspondienets al mismo ganador por año, agrupando las afiliaciones por comas en la tercera columna</span>
@@ -19012,7 +19022,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1508]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 
 
 
@@ -19081,7 +19091,7 @@ memory usage: 9.6+ KB
       <th>185</th>
       <td>Carolyn Bertozzi</td>
       <td>2022</td>
-      <td>Howard Hughes Medical Institute,Stanford Unive...</td>
+      <td>Stanford University,Howard Hughes Medical Inst...</td>
     </tr>
     <tr>
       <th>186</th>
@@ -19124,7 +19134,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1510]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Revisando nuevamente los duplicados: Se han logrado corregir satisfactoriamente </span>
@@ -19146,7 +19156,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1510]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 
 
 
@@ -19214,7 +19224,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1512]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Eliminando espacios al inicio y al final</span>
@@ -19246,7 +19256,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1512]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 
 
 
@@ -19433,7 +19443,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1513]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Cambiando los nombres de los ganadores de la columna 'Laureate' en Affiliation_DF </span>
@@ -19459,7 +19469,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1513]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 
 
 
@@ -19528,7 +19538,7 @@ memory usage: 9.6+ KB
       <th>185</th>
       <td>Carolyn Bertozzi</td>
       <td>2022</td>
-      <td>Howard Hughes Medical Institute,Stanford Unive...</td>
+      <td>Stanford University,Howard Hughes Medical Inst...</td>
     </tr>
     <tr>
       <th>186</th>
@@ -19571,7 +19581,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1514]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Nombres faltantes</span>
@@ -19598,30 +19608,30 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1514]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;Adolf Butenandt&#39;: &#39;Adolf Otto Reinhold Windaus&#39;,
- &#39;Adolf Windaus&#39;: &#39;Adolf Otto Reinhold Windaus&#39;,
- &#39;Archer Martin&#39;: &#39;Archer John Porter Martin&#39;,
+<pre>{&#39;Adolf Butenandt&#39;: &#39;Adolf Friedrich Johann Butenandt&#39;,
+ &#39;Adolf Windaus&#39;: &#39;Adolf Friedrich Johann Butenandt&#39;,
+ &#39;Archer Martin&#39;: &#39;Richard Martin Willstätter&#39;,
  &#39;Arne Tiselius&#39;: &#39;Arne Wilhelm Kaurin Tiselius&#39;,
  &#39;Derek Barton&#39;: &#39;Derek H. R. Barton&#39;,
  &#39;Dorothy Hodgkin&#39;: &#39;Dorothy Crowfoot Hodgkin&#39;,
  &#39;Edwin McMillan&#39;: &#39;Edwin Mattison McMillan&#39;,
  &#39;Hans von Euler-Chelpin&#39;: &#39;Hans Fischer&#39;,
- &#39;Harold Urey&#39;: &#39;Sir Harold W. Kroto&#39;,
+ &#39;Harold Urey&#39;: &#39;Harold Clayton Urey&#39;,
  &#39;Harry Kroto&#39;: &#39;Sir Harold W. Kroto&#39;,
  &#39;James B. Sumner&#39;: &#39;James Batcheller Sumner&#39;,
  &#39;Jens Christian Skou&#39;: &#39;Jens C. Skou&#39;,
- &#39;John Cornforth&#39;: &#39;Archer John Porter Martin&#39;,
- &#39;John Kendrew&#39;: &#39;John Cowdery Kendrew&#39;,
+ &#39;John Cornforth&#39;: &#39;John Warcup Cornforth&#39;,
+ &#39;John Kendrew&#39;: &#39;John Warcup Cornforth&#39;,
  &#39;Max Perutz&#39;: &#39;Max Ferdinand Perutz&#39;,
  &#39;Nikolay Semyonov&#39;: &#39;Nikolay Nikolaevich Semenov&#39;,
- &#39;Otto Diels&#39;: &#39;Otto Paul Hermann Diels&#39;,
- &#39;Robert Curl&#39;: &#39;Robert Bruce Merrifield&#39;,
+ &#39;Otto Diels&#39;: &#39;Heinrich Otto Wieland&#39;,
+ &#39;Robert Curl&#39;: &#39;Sir Robert Robinson&#39;,
  &#39;Venki Ramakrishnan&#39;: &#39;Venkatraman Ramakrishnan&#39;,
  &#39;Walther Nernst&#39;: &#39;Walther Hermann Nernst&#39;,
  &#39;William Giauque&#39;: &#39;Theodore William Richards&#39;}</pre>
@@ -19638,7 +19648,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1515]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Corrigiendo manualmente los nombres faltantes (hay errores en algunos resultados y estos han sido señalados)</span>
@@ -19683,7 +19693,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1515]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 
 
 
@@ -19752,7 +19762,7 @@ memory usage: 9.6+ KB
       <th>185</th>
       <td>Carolyn Bertozzi</td>
       <td>2022</td>
-      <td>Howard Hughes Medical Institute,Stanford Unive...</td>
+      <td>Stanford University,Howard Hughes Medical Inst...</td>
     </tr>
     <tr>
       <th>186</th>
@@ -19795,7 +19805,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1517]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Verificando que todos los nombres hayan sido reemplazados con sus análogos</span>
@@ -19822,7 +19832,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1517]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 
 
 
@@ -19853,7 +19863,7 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1518]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Verificando que los datos de la columna "Laureate" son del mismo tipo en ambos DF</span>
@@ -19899,7 +19909,7 @@ Data columns (total 7 columns):
  2   Laureate          202 non-null    object
  3   Rationale         202 non-null    object
  4   Birth_year        202 non-null    object
- 5   Death_year        131 non-null    object
+ 5   Death_year        202 non-null    object
  6   Country_of_birth  202 non-null    object
 dtypes: int64(1), object(6)
 memory usage: 11.2+ KB
@@ -19910,7 +19920,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1518]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 
 
 
@@ -19930,7 +19940,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1519]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Finalmente: Merging</span>
@@ -19953,7 +19963,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1519]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 
 
 
@@ -20069,7 +20079,7 @@ memory usage: 11.2+ KB
       <td>2022</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -20081,7 +20091,7 @@ memory usage: 11.2+ KB
       <td>2022</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -20093,7 +20103,7 @@ memory usage: 11.2+ KB
       <td>2023</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1961</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -20105,7 +20115,7 @@ memory usage: 11.2+ KB
       <td>2023</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1943</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -20117,7 +20127,7 @@ memory usage: 11.2+ KB
       <td>2023</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1945</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Russia</td>
     </tr>
   </tbody>
@@ -20137,7 +20147,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1520]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Laureates_Nominees_Affiliation_DF</span><span class="o">=</span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">Laureates_Nominees_DF</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">'right'</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s1">'Laureate'</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s1">'Laureate'</span><span class="p">)</span>
@@ -20166,7 +20176,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1520]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
 
 
 
@@ -20272,7 +20282,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20283,7 +20293,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20294,7 +20304,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Moungi G. Bawendi</td>
       <td>1961</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Massachusetts Institute of Technology</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>United States</td>
@@ -20305,7 +20315,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Louis E. Brus</td>
       <td>1943</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Columbia University</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>United States</td>
@@ -20316,7 +20326,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Alexey Ekimov</td>
       <td>1945</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>NaN</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>Russia</td>
@@ -20338,7 +20348,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1521]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Revisando si hay duplicados en ciertas filas</span>
@@ -20360,7 +20370,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1521]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 
 
 
@@ -20444,7 +20454,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Scripps Research</td>
       <td>"for his work on chirally catalysed oxidation ...</td>
       <td>United States</td>
@@ -20455,7 +20465,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Scripps Research</td>
       <td>"for his work on chirally catalysed oxidation ...</td>
       <td>United States</td>
@@ -20466,7 +20476,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20477,7 +20487,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20498,7 +20508,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1522]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Eliminando una de las filas duplicadas</span>
@@ -20524,7 +20534,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1522]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
 
 
 
@@ -20630,7 +20640,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Morten Meldal</td>
       <td>1954</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>University of Copenhagen</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>Denmark</td>
@@ -20641,7 +20651,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20652,7 +20662,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Moungi G. Bawendi</td>
       <td>1961</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Massachusetts Institute of Technology</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>United States</td>
@@ -20663,7 +20673,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Louis E. Brus</td>
       <td>1943</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Columbia University</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>United States</td>
@@ -20674,7 +20684,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Alexey Ekimov</td>
       <td>1945</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>NaN</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>Russia</td>
@@ -20696,7 +20706,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1523]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Revisando nuevamente si hay duplicados en ciertas filas: No hay</span>
@@ -20718,7 +20728,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1523]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 
 
 
@@ -20780,7 +20790,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1534]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Nobel_Chemistry_DF</span> <span class="o">=</span> <span class="n">Laureates_Nominees_Affiliation_DF</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -20804,7 +20814,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1534]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
 
 
 
@@ -20952,7 +20962,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1527]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fuzzy merge de los nombres de los países de Nobel_Chemistry_DF y country_isos</span>
@@ -20981,7 +20991,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1528]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Nombres faltantes</span>
@@ -21011,7 +21021,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1528]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 
 
 
@@ -21019,7 +21029,7 @@ memory usage: 11.2+ KB
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>{&#39;Czechoslovakia&#39;: &#39;SLOVAKIA&#39;,
  &#39;Israel&#39;: &#39;IRAQ&#39;,
- &#39;Kingdom of Yugoslavia&#39;: &#39;UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND (THE)&#39;,
+ &#39;Kingdom of Yugoslavia&#39;: &#39;CONGO (THE DEMOCRATIC REPUBLIC OF THE)&#39;,
  &#39;Not awarded&#39;: &#39;QATAR&#39;,
  &#39;Russia&#39;: &#39;RUSSIAN FEDERATION (THE)&#39;,
  &#39;Soviet Union&#39;: &#39;VIET NAM&#39;,
@@ -21040,7 +21050,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1536]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Ciertos países tienen que reescribirse manualmente, porque algunos ya no existen (ejm: Yugoslavia,Czechoslovakia)</span>
@@ -21089,7 +21099,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1537]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merging</span>
@@ -21116,7 +21126,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1537]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 
 
 
@@ -21163,11 +21173,11 @@ memory usage: 11.2+ KB
       <td>1911</td>
       <td>Humboldt University of Berlin</td>
       <td>"[for his] discovery of the laws of chemical d...</td>
-      <td>Netherlands</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>NETHERLANDS (THE)</td>
+      <td>The Kingdom of the Netherlands</td>
+      <td>.nl</td>
+      <td>NL</td>
+      <td>NLD</td>
     </tr>
     <tr>
       <th>1</th>
@@ -21178,11 +21188,11 @@ memory usage: 11.2+ KB
       <td>1919</td>
       <td>Humboldt University of Berlin</td>
       <td>"[for] his work on sugar and purine syntheses"</td>
-      <td>Germany</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>GERMANY</td>
+      <td>The Federal Republic of Germany</td>
+      <td>.de</td>
+      <td>DE</td>
+      <td>DEU</td>
     </tr>
     <tr>
       <th>2</th>
@@ -21193,11 +21203,11 @@ memory usage: 11.2+ KB
       <td>1927</td>
       <td>Stockholm University</td>
       <td>"[for] his electrolytic theory of dissociation"</td>
-      <td>Sweden</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>SWEDEN</td>
+      <td>The Kingdom of Sweden</td>
+      <td>.se</td>
+      <td>SE</td>
+      <td>SWE</td>
     </tr>
     <tr>
       <th>3</th>
@@ -21223,11 +21233,11 @@ memory usage: 11.2+ KB
       <td>1917</td>
       <td>Ludwig Maximilian University of Munich</td>
       <td>"[for] the advancement of organic chemistry an...</td>
-      <td>Germany</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>GERMANY</td>
+      <td>The Federal Republic of Germany</td>
+      <td>.de</td>
+      <td>DE</td>
+      <td>DEU</td>
     </tr>
     <tr>
       <th>...</th>
@@ -21250,14 +21260,14 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Morten Meldal</td>
       <td>1954</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>University of Copenhagen</td>
       <td>"for the development of click chemistry and bi...</td>
-      <td>Denmark</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>DENMARK</td>
+      <td>The Kingdom of Denmark</td>
+      <td>.dk</td>
+      <td>DK</td>
+      <td>DNK</td>
     </tr>
     <tr>
       <th>198</th>
@@ -21265,7 +21275,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>UNITED STATES MINOR OUTLYING ISLANDS (THE)</td>
@@ -21280,7 +21290,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Moungi G. Bawendi</td>
       <td>1961</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Massachusetts Institute of Technology</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>UNITED STATES MINOR OUTLYING ISLANDS (THE)</td>
@@ -21295,7 +21305,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Louis E. Brus</td>
       <td>1943</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>Columbia University</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>UNITED STATES MINOR OUTLYING ISLANDS (THE)</td>
@@ -21310,7 +21320,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Alexey Ekimov</td>
       <td>1945</td>
-      <td>None</td>
+      <td>Alive</td>
       <td>NaN</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>RUSSIAN FEDERATION (THE)</td>
@@ -21336,7 +21346,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1538]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Transformación de la tabla a horizontal para clasificar a los ganadores por país de nacimiento</span>
@@ -21364,7 +21374,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1538]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 
 
 
@@ -21444,7 +21454,7 @@ memory usage: 11.2+ KB
   </thead>
   <tbody>
     <tr>
-      <th>Argentina</th>
+      <th>ARGENTINA</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21468,7 +21478,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Australia</th>
+      <th>AUSTRALIA</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21492,7 +21502,31 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Austria</th>
+      <th>AUSTRIA</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>BELGIUM</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21540,7 +21574,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Belgium</th>
+      <th>CANADA</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21612,31 +21646,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Canada</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Denmark</th>
+      <th>DENMARK</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21660,7 +21670,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Finland</th>
+      <th>FINLAND</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21684,7 +21694,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>France</th>
+      <th>FRANCE</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21710,30 +21720,6 @@ memory usage: 11.2+ KB
     <tr>
       <th>GERMANY</th>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <td>NaN</td>
       <td>Hermann Emil Fischer</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21756,7 +21742,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Hungary</th>
+      <th>HUNGARY</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21804,7 +21790,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Italy</th>
+      <th>ITALY</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21828,7 +21814,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Japan</th>
+      <th>JAPAN</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21852,7 +21838,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Mexico</th>
+      <th>MEXICO</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21876,7 +21862,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Netherlands</th>
+      <th>NETHERLANDS (THE)</th>
       <td>Jacobus Henricus van 't Hoff</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21900,7 +21886,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Norway</th>
+      <th>NORWAY</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21948,7 +21934,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Poland</th>
+      <th>POLAND</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21996,7 +21982,7 @@ memory usage: 11.2+ KB
       <td>Alexey Ekimov</td>
     </tr>
     <tr>
-      <th>Sweden</th>
+      <th>SWEDEN</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>Svante August Arrhenius</td>
@@ -22020,7 +22006,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
     </tr>
     <tr>
-      <th>Switzerland</th>
+      <th>SWITZERLAND</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -22093,7 +22079,7 @@ memory usage: 11.2+ KB
     </tr>
   </tbody>
 </table>
-<p>27 rows × 123 columns</p>
+<p>26 rows × 123 columns</p>
 </div>
 </div>
 

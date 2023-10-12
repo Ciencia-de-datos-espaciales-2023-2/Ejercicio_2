@@ -14582,7 +14582,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Ejercicio-2">Ejercicio 2<a class="anchor-link" href="#Ejercicio-2">&#182;</a></h1><p>Para el ejercicio 2, se han seleccionado tres fuentes, cada una relacionada con la temática de los premios Nobel de Química:</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Chemistry">Fuente 1</a>: Tabla con los ganadores de los premios Nobel en Química, clasificados por año, nombre y país de procedencia</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Chemistry">Fuente 1</a>: Tabla con los ganadores de los premios Nobel en Química, clasificados por año, nombre y país de procedencia. Cabe notar que, en caso el ganador cuente con varias nacionalidades, se reporta más de un país.</li>
 <li><a href="https://en.wikipedia.org/wiki/List_of_nominees_for_the_Nobel_Prize_in_Chemistry">Fuente 2</a>: Nominados al premio Nobel de Química desde 1901 a 1970. El Comité Noruego del Nobel revela la lista de nominados hasta 50 años después de la fecha de nominación. Por esta razón, hasta la fecha, se cuenta con la lista oficial de nominados hasta 1973. Sin embargo, en la fuente que se empleará, solo se tiene información hasta 1970.</li>
 <li><a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_university_affiliation">Fuente 3</a>: Tabla con todos los ganadores de los premios Nobel, clasificados acorde a su afiliación a determinado instituto o universidad. Se deberá limpiar la tabla para filtrar solo los ganadores correspondientes al premio Nobel de Química.</li>
 </ul>
@@ -14597,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="a)-Fuente-1">a) Fuente 1<a class="anchor-link" href="#a)-Fuente-1">&#182;</a></h2>
+<h2 id="a)-Fuente-1:-%22Laureates%22">a) Fuente 1: "Laureates"<a class="anchor-link" href="#a)-Fuente-1:-%22Laureates%22">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14692,7 +14692,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1406]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1463]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Laureates</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">LaureatesLink</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">flavor</span><span class="o">=</span><span class="s1">'bs4'</span><span class="p">)</span>
@@ -14715,7 +14715,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1406]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1463]:</div>
 
 
 
@@ -14858,12 +14858,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="a.1)-Limpieza-de-los-datos">a.1) Limpieza de los datos<a class="anchor-link" href="#a.1)-Limpieza-de-los-datos">&#182;</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1407]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1467]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Laureates</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">LaureatesLink</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">flavor</span><span class="o">=</span><span class="s1">'bs4'</span><span class="p">)</span>
@@ -14876,7 +14887,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="n">Laureates_DF</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"Year"</span><span class="p">:</span><span class="s2">"Year_of_award"</span><span class="p">,</span><span class="s2">"Laureate[A]"</span><span class="p">:</span><span class="s2">"Laureate"</span><span class="p">,</span><span class="s2">"Country[B]"</span><span class="p">:</span><span class="s2">"Country"</span><span class="p">,</span><span class="s2">"Rationale[C]"</span><span class="p">:</span><span class="s2">"Rationale"</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1">#Creando dos nuevas columnas (Birth_year y Death_year a partir de datos preexistentes de la columna Laureate)</span>
-<span class="n">Laureates_DF_2</span><span class="o">=</span><span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Laureate"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="sa">r</span><span class="s1">'([a-zA-Z]+)'</span><span class="p">,</span><span class="n">repl</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Laureates_DF_2</span><span class="o">=</span><span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Laureate"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="sa">r</span><span class="s1">'([a-zA-Z]+)'</span><span class="p">,</span><span class="n">repl</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#Reemplazando letras por espacios vacíos</span>
 <span class="n">Laureates_DF_2</span><span class="o">=</span><span class="n">Laureates_DF_2</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"–"</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#crear una columna para cada año</span>
 
 <span class="n">Laureates_DF_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">Laureates_DF_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="sa">r</span><span class="s1">'(\D)'</span><span class="p">,</span><span class="n">repl</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#Eliminar no dígitos</span>
@@ -14885,7 +14896,177 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Birth_year"</span><span class="p">]</span><span class="o">=</span><span class="n">Laureates_DF_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Death_year"</span><span class="p">]</span><span class="o">=</span><span class="n">Laureates_DF_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="c1"># Limpiando la columna "Laureate" para que solo se encuentren los nombres de los ganadores</span>
+<span class="c1">#Resultados:</span>
+<span class="n">Laureates_DF</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1467]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year_of_award</th>
+      <th>Laureate</th>
+      <th>Country</th>
+      <th>Rationale</th>
+      <th>Birth_year</th>
+      <th>Death_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1901</td>
+      <td>Jacobus Henricus van 't Hoff (1852–1911)</td>
+      <td>Netherlands</td>
+      <td>"[for his] discovery of the laws of chemical d...</td>
+      <td>1852</td>
+      <td>1911</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1902</td>
+      <td>Hermann Emil Fischer (1852–1919)</td>
+      <td>Germany</td>
+      <td>"[for] his work on sugar and purine syntheses"</td>
+      <td>1852</td>
+      <td>1919</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1903</td>
+      <td>Svante August Arrhenius (1859–1927)</td>
+      <td>Sweden</td>
+      <td>"[for] his electrolytic theory of dissociation"</td>
+      <td>1859</td>
+      <td>1927</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1904</td>
+      <td>Sir William Ramsay (1852–1916)</td>
+      <td>United Kingdom</td>
+      <td>"[for his] discovery of the inert gaseous elem...</td>
+      <td>1852</td>
+      <td>1916</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1905</td>
+      <td>Adolf von Baeyer (1835–1917)</td>
+      <td>Germany</td>
+      <td>"[for] the advancement of organic chemistry an...</td>
+      <td>1835</td>
+      <td>1917</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>2022</td>
+      <td>Morten Meldal (b. 1954)</td>
+      <td>Denmark</td>
+      <td>"for the development of click chemistry and bi...</td>
+      <td>1954</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>2022</td>
+      <td>K. Barry Sharpless (b. 1941)</td>
+      <td>United States</td>
+      <td>"for the development of click chemistry and bi...</td>
+      <td>1941</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>2023</td>
+      <td>Moungi G. Bawendi (b. 1961)</td>
+      <td>United States</td>
+      <td>"for the discovery and synthesis of quantum dots"</td>
+      <td>1961</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>2023</td>
+      <td>Louis E. Brus (b. 1943)</td>
+      <td>United States</td>
+      <td>"for the discovery and synthesis of quantum dots"</td>
+      <td>1943</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>2023</td>
+      <td>Alexey Ekimov (b. 1945)</td>
+      <td>Russia</td>
+      <td>"for the discovery and synthesis of quantum dots"</td>
+      <td>1945</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+<p>202 rows × 6 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1468]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Limpiando la columna "Laureate" para que solo se encuentren los nombres de los ganadores</span>
 <span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Laureate"</span><span class="p">]</span><span class="o">=</span><span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Laureate"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="sa">r</span><span class="s1">'(\d+)'</span><span class="p">,</span><span class="n">repl</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#eliminar dígitos correspondientes a los años</span>
 <span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Laureate"</span><span class="p">]</span><span class="o">=</span> <span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Laureate"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s1">' (–)'</span><span class="p">,</span><span class="n">repl</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> <span class="c1">#eliminar ' (-)' ó '(b. )' que quedan</span>
 <span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Laureate"</span><span class="p">]</span><span class="o">=</span> <span class="n">Laureates_DF</span><span class="p">[</span><span class="s2">"Laureate"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s1">'(–)'</span><span class="p">,</span><span class="n">repl</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> <span class="c1">#eliminar ' (-)' ó '(b. )' que quedan</span>
@@ -14913,7 +15094,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1407]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1468]:</div>
 
 
 
@@ -15078,14 +15259,104 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1409]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1471]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Revisando la columna 'Country'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Limpiando la columna 'Country'</span>
 <span class="c1"># Se debe limpiar, porque algunos ganadores presentan más de una nacionalidad</span>
 <span class="nb">set</span><span class="p">(</span><span class="n">Laureates_DF</span><span class="p">[</span><span class="s1">'Country'</span><span class="p">])</span> <span class="c1"># cada país está separado por '\xa0' o doble espacio</span>
+</pre></div>
 
-<span class="c1"># Solo se mantendrá el primer país, porque corresponde al país de nacimiento</span>
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1471]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;Argentina&#39;,
+ &#39;Australia \xa0United Kingdom&#39;,
+ &#39;Austria \xa0Kingdom of Yugoslavia&#39;,
+ &#39;Belgium&#39;,
+ &#39;Canada&#39;,
+ &#39;Canada \xa0Hungary&#39;,
+ &#39;Canada \xa0United States&#39;,
+ &#39;Canada \xa0West Germany&#39;,
+ &#39;Czechoslovakia&#39;,
+ &#39;Denmark&#39;,
+ &#39;Finland&#39;,
+ &#39;France&#39;,
+ &#39;Germany&#39;,
+ &#39;Germany \xa0Hungary&#39;,
+ &#39;Germany \xa0Romania[117]&#39;,
+ &#39;Germany \xa0United States[121]&#39;,
+ &#39;Hungary&#39;,
+ &#39;Israel&#39;,
+ &#39;Israel \xa0United States&#39;,
+ &#39;Italy&#39;,
+ &#39;Japan&#39;,
+ &#39;Japan[108]&#39;,
+ &#39;Kingdom of Yugoslavia  Switzerland&#39;,
+ &#39;Mexico&#39;,
+ &#39;Netherlands&#39;,
+ &#39;Norway&#39;,
+ &#39;Not awarded&#39;,
+ &#39;Poland (\xa0Russian Empire) \xa0France&#39;,
+ &#39;Russia&#39;,
+ &#39;Soviet Union&#39;,
+ &#39;Sweden&#39;,
+ &#39;Sweden \xa0Germany&#39;,
+ &#39;Sweden \xa0United Kingdom&#39;,
+ &#39;Switzerland&#39;,
+ &#39;United Kingdom&#39;,
+ &#39;United Kingdom \xa0New Zealand&#39;,
+ &#39;United Kingdom \xa0United States&#39;,
+ &#39;United States&#39;,
+ &#39;United States \xa0Austria&#39;,
+ &#39;United States \xa0Canada&#39;,
+ &#39;United States \xa0Egypt&#39;,
+ &#39;United States \xa0Hungary&#39;,
+ &#39;United States \xa0India \xa0United Kingdom&#39;,
+ &#39;United States \xa0Israel&#39;,
+ &#39;United States \xa0New Zealand&#39;,
+ &#39;United States \xa0Norway&#39;,
+ &#39;United States \xa0Poland&#39;,
+ &#39;United States \xa0Republic of China&#39;,
+ &#39;United States \xa0Turkey&#39;,
+ &#39;United States \xa0United Kingdom \xa0Israel[115]&#39;,
+ &#39;West Germany&#39;,
+ &#39;Yugoslavia  Switzerland&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1472]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Solo se mantendrá el primer país, porque corresponde al país de nacimiento</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">Laureates_DF</span><span class="p">[</span><span class="s1">'Country'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\xa0</span><span class="s2">"</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#separar por '\xa0'</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"  "</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#separar por doble espacio</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"["</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#para eliminar las referencias que se encuentran como números entre corchetes</span>
@@ -15113,7 +15384,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1409]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1472]:</div>
 
 
 
@@ -15160,7 +15431,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1410]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1473]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Dataframe resultante</span>
@@ -15183,7 +15454,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1410]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1473]:</div>
 
 
 
@@ -15275,7 +15546,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>Morten Meldal</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1954</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Denmark</td>
     </tr>
     <tr>
@@ -15284,7 +15555,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>K. Barry Sharpless</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -15293,7 +15564,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>Moungi G. Bawendi</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1961</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -15302,7 +15573,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>Louis E. Brus</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1943</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -15311,7 +15582,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
       <td>Alexey Ekimov</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1945</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Russia</td>
     </tr>
   </tbody>
@@ -15333,7 +15604,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="b)-Fuente-2">b) Fuente 2<a class="anchor-link" href="#b)-Fuente-2">&#182;</a></h2>
+<h2 id="b)-Fuente-2:-%22Nominees%22">b) Fuente 2: "Nominees"<a class="anchor-link" href="#b)-Fuente-2:-%22Nominees%22">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15342,7 +15613,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1411]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1479]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -15367,7 +15638,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1411]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1479]:</div>
 
 
 
@@ -15387,7 +15658,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1412]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1480]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Nominees</span><span class="p">))</span>
@@ -15408,7 +15679,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1412]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1480]:</div>
 
 
 
@@ -15428,7 +15699,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1413]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1481]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#El primer elemento de la lista es un DF que contiene adjuntos verticalmente datos de los nominados de 1901 a 1909</span>
@@ -15450,7 +15721,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1413]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1481]:</div>
 
 
 
@@ -16022,7 +16293,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="b.2)-Filtrado-y-concatenaci%C3%B3n-de-la-data">b.2) Filtrado y concatenaci&#243;n de la data<a class="anchor-link" href="#b.2)-Filtrado-y-concatenaci%C3%B3n-de-la-data">&#182;</a></h3>
+<h3 id="b.1)-Filtrado-y-concatenaci%C3%B3n-de-la-data">b.1) Filtrado y concatenaci&#243;n de la data<a class="anchor-link" href="#b.1)-Filtrado-y-concatenaci%C3%B3n-de-la-data">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -16031,12 +16302,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1414]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1482]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Con la función cotas, se busca encontrar el intervalo de filas donde se encuentran los nominados por cada año</span>
-<span class="c1"># Con esto, acotar los DFs asociados a cada año, en función a dicho intervalo de filas</span>
-<span class="c1"># x: índice de la lista Nominees, y: año de nominación</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Función cotas: permite encontrar el intervalo de filas donde se encuentran los nominados por cada año</span>
 <span class="c1"># Por ejemplo, los que fueron nominados en 1901, se encuentran en las filas 1:7 del elemento 1 de la lista Nominees</span>
 
 <span class="k">def</span> <span class="nf">cotas</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
@@ -16068,7 +16337,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1414]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1482]:</div>
 
 
 
@@ -16090,16 +16359,22 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Con la función <strong>cotas(x,y)</strong>, se busca encontrar el intervalo de filas donde se encuentran los nominados por cada año. Con esto, acotar los DFs asociados a cada año, en función a dicho intervalo de filas.
+Parámetros:</p>
+<ul>
+<li>y: año de nominación</li>
+<li>x: índice de la lista Nominees. x admite un valor de 0,1,2,3,4,5,6 ó 7, dependiendo del Dataframe, donde se encuentre el año de nominación deseado. </li>
+</ul>
 <p>Se tiene información de los nominados desde 1901 hasta 1970 en forma de 8 DFS:</p>
 <ul>
-<li>1901–1909: Nominees[0]</li>
-<li>1910–1919: Nominees[1]</li>
-<li>1920–1929: Nominees[2]</li>
-<li>1930–1939: Nominees[3]</li>
-<li>1940–1949: Nominees[4]</li>
-<li>1950–1959: Nominees[5]</li>
-<li>1960–1969: Nominees[6]</li>
-<li>1970: Nominees[7]</li>
+<li>1901–1909: Nominees[0], x=0</li>
+<li>1910–1919: Nominees[1], x=1</li>
+<li>1920–1929: Nominees[2], x=2</li>
+<li>1930–1939: Nominees[3], x=3</li>
+<li>1940–1949: Nominees[4], x=4</li>
+<li>1950–1959: Nominees[5], x=5</li>
+<li>1960–1969: Nominees[6], x=6</li>
+<li>1970: Nominees[7], x=7</li>
 </ul>
 
 </div>
@@ -16110,7 +16385,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1415]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1483]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#DFs de 1901-1909</span>
@@ -16145,7 +16420,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1416]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1484]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Concatenando los DFs de cada lista</span>
@@ -16161,6 +16436,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <span class="n">NomineesList</span><span class="o">=</span><span class="p">[</span><span class="n">NomineesDFs_1901_1909</span><span class="p">,</span><span class="n">NomineesDFs_1910_1969</span><span class="p">,</span><span class="n">NomineesDF_1970</span><span class="p">]</span>
 <span class="n">NomineesAllDFs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">NomineesList</span><span class="p">)</span>
+
+<span class="c1">#Resultado</span>
 <span class="n">NomineesAllDFs</span>
 </pre></div>
 
@@ -16179,7 +16456,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1416]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1484]:</div>
 
 
 
@@ -16350,7 +16627,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1417]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1486]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">NomineesAllDFs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">NomineesList</span><span class="p">)</span>
@@ -16382,7 +16659,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1417]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1486]:</div>
 
 
 
@@ -16494,7 +16771,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1418]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1487]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Limpieza de la columna años de nominación</span>
@@ -16523,7 +16800,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1418]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1487]:</div>
 
 
 
@@ -16635,12 +16912,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1419]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1488]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Ordenando el DF por año (una fila para cada año de nominación)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Ordenando el DF por año (una fila para cada año de nominación. Ejm: 1901,1902 -&gt; 2 filas )</span>
 <span class="n">NomineesAllDFs_Long</span><span class="o">=</span><span class="n">NomineesAllDFs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">=</span><span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+
+<span class="c1">#se separa en una fila distinta cada elemento de la columna 'Years_Nominated' separado de otro por comas</span>
+<span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">=</span><span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span> 
 <span class="n">NomineesAllDFs_Long</span><span class="o">=</span><span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s1">'Years_Nominated'</span><span class="p">)</span>
 <span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">NomineesAllDFs_Long</span>
@@ -16661,7 +16940,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1419]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1488]:</div>
 
 
 
@@ -16768,24 +17047,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Problema</strong>: Los años 152, 153 y 1974<em> deben ser corregidos. </em>Nota: la lista oficial de candidatos al nobel aparece 50 años luego de la fecha de nominación, por lo que aún no se han pubiclado los nominados en 1974</p>
-
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1420]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1490]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Transformación de la tabla a horizontal</span>
@@ -16813,7 +17080,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1420]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1490]:</div>
 
 
 
@@ -17168,18 +17435,30 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Problema</strong>: Los años 152, 153 y 1974<em> deben ser corregidos. </em>Nota: la lista oficial de candidatos al nobel aparece 50 años luego de la fecha de nominación, por lo que aún no se han pubiclado los nominados en 1974</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1421]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1494]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filas de nominados, donde hay error en los años</span>
-<span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">==</span><span class="s1">'152'</span><span class="p">]</span> <span class="c1">#Jaroslav Heyrovský</span>
-<span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">==</span><span class="s1">'153'</span><span class="p">]</span> <span class="c1">#Jaroslav Heyrovský</span>
-<span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">==</span><span class="s1">'1974'</span><span class="p">]</span> <span class="c1">#Tetsuo Nozoe</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Identificación de las filas de nominados, donde hay error en los años</span>
+<span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">==</span><span class="s1">'152'</span><span class="p">]</span> <span class="c1">#Resultado: Jaroslav Heyrovský</span>
+<span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">==</span><span class="s1">'153'</span><span class="p">]</span> <span class="c1">#Resultado: Jaroslav Heyrovský</span>
+<span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">NomineesAllDFs_Long</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">==</span><span class="s1">'1974'</span><span class="p">]</span> <span class="c1">#Resultado: Tetsuo Nozoe</span>
 </pre></div>
 
      </div>
@@ -17197,7 +17476,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1421]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1494]:</div>
 
 
 
@@ -17260,7 +17539,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1422]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1495]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Corrección de los datos</span>
@@ -17296,7 +17575,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1422]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1495]:</div>
 
 
 
@@ -17408,15 +17687,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1423]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1496]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Para realizar merge con las otras dos fuentes, se agruparán los nominados por año</span>
+<span class="c1"># Por esto, solo se conservarán las columnas 'Years_Nominated' y 'Nominees'</span>
+
 <span class="n">Nominees_DF_2</span><span class="o">=</span><span class="n">NomineesAllDFs_Long</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'Years_Nominated'</span><span class="p">],</span><span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">'Country'</span><span class="p">:</span><span class="s1">'first'</span><span class="p">,</span><span class="s1">'Nominee'</span><span class="p">:</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="s1">' , '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">))})</span>
 <span class="n">Nominees_DF_2</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">=</span><span class="n">Nominees_DF_2</span><span class="p">[</span><span class="s1">'Years_Nominated'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)</span>
 <span class="n">Nominees_DF_2</span><span class="o">=</span><span class="n">Nominees_DF_2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">'Country'</span><span class="p">)</span>
 <span class="n">Nominees_DF_2</span><span class="o">=</span><span class="n">Nominees_DF_2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'Nominee'</span><span class="p">:</span><span class="s1">'Nominees'</span><span class="p">})</span>
 
+<span class="c1">#DF resultante</span>
 <span class="n">Nominees_DF_2</span>
 </pre></div>
 
@@ -17435,7 +17717,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1423]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1496]:</div>
 
 
 
@@ -17537,7 +17819,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="c)-Fuente-3">c) Fuente 3<a class="anchor-link" href="#c)-Fuente-3">&#182;</a></h2>
+<h2 id="c)-Fuente-3:-%22Affiliation%22">c) Fuente 3: "Affiliation"<a class="anchor-link" href="#c)-Fuente-3:-%22Affiliation%22">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -17546,7 +17828,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1424]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1497]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -17571,7 +17853,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1424]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1497]:</div>
 
 
 
@@ -17591,7 +17873,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1425]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1503]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Affiliation</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -17612,7 +17894,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1425]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1503]:</div>
 
 
 
@@ -17731,12 +18013,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="c.1)-Limpieza-de-los-datos">c.1) Limpieza de los datos<a class="anchor-link" href="#c.1)-Limpieza-de-los-datos">&#182;</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1426]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1500]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Affiliation</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span>
@@ -17757,7 +18050,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1426]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1500]:</div>
 
 
 
@@ -17777,14 +18070,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1427]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1504]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Creando un DF con solo los ganadores al premio Nobel de Química</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Creando un DF solo con los ganadores al premio Nobel de Química</span>
 <span class="n">Affiliation_DF</span><span class="o">=</span><span class="n">Affiliation</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">Affiliation</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'Discipline'</span><span class="p">]</span><span class="o">==</span><span class="s1">'Chemistry'</span><span class="p">]</span>
 
 <span class="c1">#Eliminado la columna 'Discipline' del nuevo DF</span>
-<span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Discipline'</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Affiliation_DF</span><span class="o">=</span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Discipline'</span><span class="p">])</span>
 
 <span class="c1"># Renombrando la columna "Year of award"</span>
 <span class="n">Affiliation_DF</span> <span class="o">=</span> <span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"Year of award"</span><span class="p">:</span><span class="s2">"Year_of_award"</span><span class="p">})</span>
@@ -17806,23 +18099,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>C:\Users\Patiy Li Yang\AppData\Local\Temp\ipykernel_11844\356506548.py:5: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  Affiliation_DF.drop(columns=[&#39;Discipline&#39;],inplace=True)
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1427]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1504]:</div>
 
 
 
@@ -18083,7 +18360,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="d.1)-Merge-de-Nominees_DF_2-y-Laureates_DF">d.1) Merge de Nominees_DF_2 y Laureates_DF<a class="anchor-link" href="#d.1)-Merge-de-Nominees_DF_2-y-Laureates_DF">&#182;</a></h3>
+<h3 id="d.1)-Uni%C3%B3n-de-Nominees_DF_2-y-Laureates_DF">d.1) Uni&#243;n de Nominees_DF_2 y Laureates_DF<a class="anchor-link" href="#d.1)-Uni%C3%B3n-de-Nominees_DF_2-y-Laureates_DF">&#182;</a></h3><p>Columnas a emplear para el "merging": 'Years_Nominated' y 'Year_of_award'</p>
+
 </div>
 </div>
 </div>
@@ -18092,10 +18370,11 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1429]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1505]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Nominees_DF_2</span><span class="o">.</span><span class="n">info</span><span class="p">(),</span> <span class="n">Laureates_DF</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Verificando que los datos en ambas columnas sean del mismo tipo</span>
+<span class="n">Nominees_DF_2</span><span class="o">.</span><span class="n">info</span><span class="p">(),</span> <span class="n">Laureates_DF</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -18135,7 +18414,7 @@ Data columns (total 6 columns):
  1   Laureate          202 non-null    object
  2   Rationale         202 non-null    object
  3   Birth_year        202 non-null    object
- 4   Death_year        202 non-null    object
+ 4   Death_year        131 non-null    object
  5   Country_of_birth  202 non-null    object
 dtypes: int64(1), object(5)
 memory usage: 9.6+ KB
@@ -18146,7 +18425,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1429]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1505]:</div>
 
 
 
@@ -18166,10 +18445,10 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1430]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1506]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Merging</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merging</span>
 <span class="n">Laureates_Nominees_DF</span><span class="o">=</span><span class="n">Nominees_DF_2</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">Laureates_DF</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">'right'</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s1">'Years_Nominated'</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s1">'Year_of_award'</span><span class="p">)</span>
 <span class="n">Laureates_Nominees_DF</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'Years_Nominated'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">Laureates_Nominees_DF</span>
@@ -18190,7 +18469,7 @@ memory usage: 9.6+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1430]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1506]:</div>
 
 
 
@@ -18290,7 +18569,7 @@ memory usage: 9.6+ KB
       <td>Morten Meldal</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1954</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Denmark</td>
     </tr>
     <tr>
@@ -18300,7 +18579,7 @@ memory usage: 9.6+ KB
       <td>K. Barry Sharpless</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -18310,7 +18589,7 @@ memory usage: 9.6+ KB
       <td>Moungi G. Bawendi</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1961</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -18320,7 +18599,7 @@ memory usage: 9.6+ KB
       <td>Louis E. Brus</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1943</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -18330,7 +18609,7 @@ memory usage: 9.6+ KB
       <td>Alexey Ekimov</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1945</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Russia</td>
     </tr>
   </tbody>
@@ -18352,7 +18631,8 @@ memory usage: 9.6+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="d.2)-Merge-de-Leaureates_Nominees_DF-y-Affiliation_DF">d.2) Merge de Leaureates_Nominees_DF y Affiliation_DF<a class="anchor-link" href="#d.2)-Merge-de-Leaureates_Nominees_DF-y-Affiliation_DF">&#182;</a></h3>
+<h3 id="d.2)-Uni%C3%B3n-de-Leaureates_Nominees_DF-y-Affiliation_DF">d.2) Uni&#243;n de Leaureates_Nominees_DF y Affiliation_DF<a class="anchor-link" href="#d.2)-Uni%C3%B3n-de-Leaureates_Nominees_DF-y-Affiliation_DF">&#182;</a></h3><p>Columna a emplear para el "merging": 'Laureate'</p>
+
 </div>
 </div>
 </div>
@@ -18363,7 +18643,18 @@ memory usage: 9.6+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Problema</strong>: Revisando la <a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_university_affiliation">fuente 3</a>, ciertos ganadores presentan más de una afiliación y se ha creado una extra fila para cada afiliación. Por tanto, se deberán borrar los duplicados en Affiliation_DF.</p>
+<h3 id="d.2.-a)-Limpieza-de-los-datos-en-Affiliation_DF">d.2. a) Limpieza de los datos en Affiliation_DF<a class="anchor-link" href="#d.2.-a)-Limpieza-de-los-datos-en-Affiliation_DF">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Problema 1</strong>: Revisando la <a href="https://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_university_affiliation">fuente 3</a>, ciertos ganadores presentan más de una afiliación y se ha creado una extra fila para cada afiliación. Por tanto, se deberán borrar los duplicados en Affiliation_DF.</p>
 
 </div>
 </div>
@@ -18373,88 +18664,13 @@ memory usage: 9.6+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1431]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Laureates_DF</span><span class="o">.</span><span class="n">info</span><span class="p">(),</span> <span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 202 entries, 0 to 201
-Data columns (total 6 columns):
- #   Column            Non-Null Count  Dtype 
----  ------            --------------  ----- 
- 0   Year_of_award     202 non-null    int64 
- 1   Laureate          202 non-null    object
- 2   Rationale         202 non-null    object
- 3   Birth_year        202 non-null    object
- 4   Death_year        202 non-null    object
- 5   Country_of_birth  202 non-null    object
-dtypes: int64(1), object(5)
-memory usage: 9.6+ KB
-&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 211 entries, 0 to 210
-Data columns (total 3 columns):
- #   Column         Non-Null Count  Dtype 
----  ------         --------------  ----- 
- 0   Laureate       211 non-null    object
- 1   Year_of_award  211 non-null    int64 
- 2   Affiliation    211 non-null    object
-dtypes: int64(1), object(2)
-memory usage: 5.1+ KB
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1431]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(None, None)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1432]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1507]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filas donde se observan duplicados en las columnas 'Laureate' y 'Year_Won'</span>
 <span class="n">Affiliation_DF</span><span class="p">[</span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s1">'Laureate'</span><span class="p">,</span><span class="s1">'Year_of_award'</span><span class="p">],</span><span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
 
-<span class="c1">#Notar que se ha seleccionado ambas columnas, pues Frederick Sanger y 	Karl Barry Sharpless han ganado el premio Nobel en años distintos</span>
+<span class="c1">#Notar que se ha seleccionado ambas columnas, pues dos ganadores (Frederick Sanger y Karl Barry Sharpless) han ganado el premio Nobel en años distintos</span>
 </pre></div>
 
      </div>
@@ -18472,7 +18688,7 @@ memory usage: 5.1+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1432]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1507]:</div>
 
 
 
@@ -18502,256 +18718,256 @@ memory usage: 5.1+ KB
   </thead>
   <tbody>
     <tr>
-      <th>28</th>
-      <td>Carl Bosch</td>
-      <td>1931</td>
-      <td>Heidelberg University</td>
-    </tr>
-    <tr>
-      <th>29</th>
+      <th>56</th>
       <td>Friedrich Bergius</td>
       <td>1931</td>
       <td>Heidelberg University</td>
     </tr>
     <tr>
-      <th>30</th>
-      <td>Carl Bosch</td>
-      <td>1931</td>
-      <td>IG Farben</td>
-    </tr>
-    <tr>
-      <th>31</th>
+      <th>57</th>
       <td>Friedrich Bergius</td>
       <td>1931</td>
       <td>IG Farben</td>
     </tr>
     <tr>
-      <th>36</th>
-      <td>Peter Debye</td>
-      <td>1936</td>
-      <td>Humboldt University of Berlin</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>Peter Debye</td>
-      <td>1936</td>
-      <td>Max Planck Institute for Physics</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>Richard Kuhn</td>
-      <td>1938</td>
-      <td>Heidelberg University</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>Richard Kuhn</td>
-      <td>1938</td>
-      <td>Max Planck Institute for Medical Research</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>Adolf Butenandt</td>
-      <td>1939</td>
-      <td>Max Planck Institute of Biochemistry</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>Adolf Butenandt</td>
-      <td>1939</td>
-      <td>Humboldt University of Berlin</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>Nikolay Semyonov</td>
-      <td>1956</td>
-      <td>Moscow State University</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>Nikolay Semyonov</td>
-      <td>1956</td>
-      <td>Institute for Chemical Physics of the Academy ...</td>
-    </tr>
-    <tr>
-      <th>94</th>
-      <td>Ilya Prigogine</td>
-      <td>1977</td>
-      <td>University of Texas at Austin</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>Ilya Prigogine</td>
-      <td>1977</td>
-      <td>Université libre de Bruxelles</td>
-    </tr>
-    <tr>
-      <th>113</th>
-      <td>Jean-Marie Lehn</td>
-      <td>1987</td>
-      <td>Louis Pasteur University</td>
-    </tr>
-    <tr>
-      <th>115</th>
-      <td>Jean-Marie Lehn</td>
-      <td>1987</td>
-      <td>Collège de France</td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>Johann Deisenhofer</td>
-      <td>1988</td>
-      <td>University of Texas Southwestern Medical Center</td>
-    </tr>
-    <tr>
-      <th>117</th>
-      <td>Johann Deisenhofer</td>
-      <td>1988</td>
+      <th>59</th>
+      <td>Carolyn Bertozzi</td>
+      <td>2022</td>
       <td>Howard Hughes Medical Institute</td>
     </tr>
     <tr>
-      <th>144</th>
-      <td>Kurt Wüthrich</td>
-      <td>2002</td>
-      <td>Scripps Research</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>Kurt Wüthrich</td>
-      <td>2002</td>
-      <td>ETH Zurich</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>Roderick MacKinnon</td>
-      <td>2003</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>150</th>
-      <td>Roderick MacKinnon</td>
-      <td>2003</td>
-      <td>Rockefeller University</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>Roger Y. Tsien</td>
-      <td>2008</td>
-      <td>University of California, San Diego</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>Osamu Shimomura</td>
-      <td>2008</td>
-      <td>Boston University School of Medicine</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>Osamu Shimomura</td>
-      <td>2008</td>
-      <td>Marine Biological Laboratory</td>
-    </tr>
-    <tr>
-      <th>163</th>
-      <td>Roger Y. Tsien</td>
-      <td>2008</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>164</th>
-      <td>Thomas A. Steitz</td>
-      <td>2009</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>166</th>
-      <td>Thomas A. Steitz</td>
-      <td>2009</td>
-      <td>Yale University</td>
-    </tr>
-    <tr>
-      <th>172</th>
-      <td>Robert Lefkowitz</td>
-      <td>2012</td>
-      <td>Duke University Medical Center</td>
-    </tr>
-    <tr>
-      <th>173</th>
-      <td>Robert Lefkowitz</td>
-      <td>2012</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>175</th>
-      <td>Martin Karplus</td>
-      <td>2013</td>
-      <td>University of Strasbourg</td>
-    </tr>
-    <tr>
-      <th>176</th>
-      <td>Martin Karplus</td>
-      <td>2013</td>
-      <td>Harvard University</td>
-    </tr>
-    <tr>
-      <th>181</th>
-      <td>Stefan Hell</td>
-      <td>2014</td>
-      <td>Max Planck Institute for Biophysical Chemistry</td>
-    </tr>
-    <tr>
-      <th>182</th>
-      <td>Stefan Hell</td>
-      <td>2014</td>
-      <td>German Cancer Research Center</td>
-    </tr>
-    <tr>
-      <th>183</th>
-      <td>Paul L. Modrich</td>
-      <td>2015</td>
-      <td>Howard Hughes Medical Institute</td>
-    </tr>
-    <tr>
-      <th>185</th>
-      <td>Paul L. Modrich</td>
-      <td>2015</td>
-      <td>Duke University School of Medicine</td>
-    </tr>
-    <tr>
-      <th>186</th>
-      <td>Tomas Lindahl</td>
-      <td>2015</td>
-      <td>Francis Crick Institute</td>
-    </tr>
-    <tr>
-      <th>187</th>
-      <td>Tomas Lindahl</td>
-      <td>2015</td>
-      <td>Clare Hall laboratories</td>
-    </tr>
-    <tr>
-      <th>198</th>
-      <td>Akira Yoshino</td>
-      <td>2019</td>
-      <td>Asahi Kasei</td>
-    </tr>
-    <tr>
-      <th>199</th>
-      <td>Akira Yoshino</td>
-      <td>2019</td>
-      <td>Meijo University</td>
-    </tr>
-    <tr>
-      <th>205</th>
+      <th>60</th>
       <td>Carolyn Bertozzi</td>
       <td>2022</td>
       <td>Stanford University</td>
     </tr>
     <tr>
-      <th>206</th>
-      <td>Carolyn Bertozzi</td>
-      <td>2022</td>
+      <th>80</th>
+      <td>Carl Bosch</td>
+      <td>1931</td>
+      <td>Heidelberg University</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>Carl Bosch</td>
+      <td>1931</td>
+      <td>IG Farben</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Adolf Butenandt</td>
+      <td>1939</td>
+      <td>Humboldt University of Berlin</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Adolf Butenandt</td>
+      <td>1939</td>
+      <td>Max Planck Institute of Biochemistry</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>Peter Debye</td>
+      <td>1936</td>
+      <td>Humboldt University of Berlin</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>Peter Debye</td>
+      <td>1936</td>
+      <td>Max Planck Institute for Physics</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>Johann Deisenhofer</td>
+      <td>1988</td>
       <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>Johann Deisenhofer</td>
+      <td>1988</td>
+      <td>University of Texas Southwestern Medical Center</td>
+    </tr>
+    <tr>
+      <th>289</th>
+      <td>Stefan Hell</td>
+      <td>2014</td>
+      <td>German Cancer Research Center</td>
+    </tr>
+    <tr>
+      <th>290</th>
+      <td>Stefan Hell</td>
+      <td>2014</td>
+      <td>Max Planck Institute for Biophysical Chemistry</td>
+    </tr>
+    <tr>
+      <th>354</th>
+      <td>Martin Karplus</td>
+      <td>2013</td>
+      <td>Harvard University</td>
+    </tr>
+    <tr>
+      <th>355</th>
+      <td>Martin Karplus</td>
+      <td>2013</td>
+      <td>University of Strasbourg</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>Richard Kuhn</td>
+      <td>1938</td>
+      <td>Heidelberg University</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>Richard Kuhn</td>
+      <td>1938</td>
+      <td>Max Planck Institute for Medical Research</td>
+    </tr>
+    <tr>
+      <th>409</th>
+      <td>Robert Lefkowitz</td>
+      <td>2012</td>
+      <td>Duke University Medical Center</td>
+    </tr>
+    <tr>
+      <th>410</th>
+      <td>Robert Lefkowitz</td>
+      <td>2012</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>412</th>
+      <td>Jean-Marie Lehn</td>
+      <td>1987</td>
+      <td>Collège de France</td>
+    </tr>
+    <tr>
+      <th>413</th>
+      <td>Jean-Marie Lehn</td>
+      <td>1987</td>
+      <td>Louis Pasteur University</td>
+    </tr>
+    <tr>
+      <th>422</th>
+      <td>Tomas Lindahl</td>
+      <td>2015</td>
+      <td>Clare Hall laboratories</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>Tomas Lindahl</td>
+      <td>2015</td>
+      <td>Francis Crick Institute</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>Roderick MacKinnon</td>
+      <td>2003</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>439</th>
+      <td>Roderick MacKinnon</td>
+      <td>2003</td>
+      <td>Rockefeller University</td>
+    </tr>
+    <tr>
+      <th>479</th>
+      <td>Paul L. Modrich</td>
+      <td>2015</td>
+      <td>Duke University School of Medicine</td>
+    </tr>
+    <tr>
+      <th>480</th>
+      <td>Paul L. Modrich</td>
+      <td>2015</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>575</th>
+      <td>Ilya Prigogine</td>
+      <td>1977</td>
+      <td>Université libre de Bruxelles</td>
+    </tr>
+    <tr>
+      <th>576</th>
+      <td>Ilya Prigogine</td>
+      <td>1977</td>
+      <td>University of Texas at Austin</td>
+    </tr>
+    <tr>
+      <th>652</th>
+      <td>Nikolay Semyonov</td>
+      <td>1956</td>
+      <td>Institute for Chemical Physics of the Academy ...</td>
+    </tr>
+    <tr>
+      <th>653</th>
+      <td>Nikolay Semyonov</td>
+      <td>1956</td>
+      <td>Moscow State University</td>
+    </tr>
+    <tr>
+      <th>663</th>
+      <td>Osamu Shimomura</td>
+      <td>2008</td>
+      <td>Boston University School of Medicine</td>
+    </tr>
+    <tr>
+      <th>664</th>
+      <td>Osamu Shimomura</td>
+      <td>2008</td>
+      <td>Marine Biological Laboratory</td>
+    </tr>
+    <tr>
+      <th>693</th>
+      <td>Thomas A. Steitz</td>
+      <td>2009</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>694</th>
+      <td>Thomas A. Steitz</td>
+      <td>2009</td>
+      <td>Yale University</td>
+    </tr>
+    <tr>
+      <th>742</th>
+      <td>Roger Y. Tsien</td>
+      <td>2008</td>
+      <td>Howard Hughes Medical Institute</td>
+    </tr>
+    <tr>
+      <th>743</th>
+      <td>Roger Y. Tsien</td>
+      <td>2008</td>
+      <td>University of California, San Diego</td>
+    </tr>
+    <tr>
+      <th>791</th>
+      <td>Kurt Wüthrich</td>
+      <td>2002</td>
+      <td>ETH Zurich</td>
+    </tr>
+    <tr>
+      <th>792</th>
+      <td>Kurt Wüthrich</td>
+      <td>2002</td>
+      <td>Scripps Research</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>Akira Yoshino</td>
+      <td>2019</td>
+      <td>Asahi Kasei</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>Akira Yoshino</td>
+      <td>2019</td>
+      <td>Meijo University</td>
     </tr>
   </tbody>
 </table>
@@ -18769,7 +18985,7 @@ memory usage: 5.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1433]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1508]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Agrupación de las filas correspondienets al mismo ganador por año, agrupando las afiliaciones por comas en la tercera columna</span>
@@ -18796,7 +19012,7 @@ memory usage: 5.1+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1433]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1508]:</div>
 
 
 
@@ -18865,7 +19081,7 @@ memory usage: 5.1+ KB
       <th>185</th>
       <td>Carolyn Bertozzi</td>
       <td>2022</td>
-      <td>Stanford University,Howard Hughes Medical Inst...</td>
+      <td>Howard Hughes Medical Institute,Stanford Unive...</td>
     </tr>
     <tr>
       <th>186</th>
@@ -18908,7 +19124,7 @@ memory usage: 5.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1434]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1510]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Revisando nuevamente los duplicados: Se han logrado corregir satisfactoriamente </span>
@@ -18930,7 +19146,7 @@ memory usage: 5.1+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1434]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1510]:</div>
 
 
 
@@ -18977,6 +19193,17 @@ memory usage: 5.1+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="d.2.-b)-Fuzzy-merging-de-Leaureates_Nominees_DF-y-Affiliation_DF">d.2. b) Fuzzy merging de Leaureates_Nominees_DF y Affiliation_DF<a class="anchor-link" href="#d.2.-b)-Fuzzy-merging-de-Leaureates_Nominees_DF-y-Affiliation_DF">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Problema 2</strong>: Se busca unir Affiliation_DF y Laureates_DF mediante la columna en común 'Laureate'. Sin embargo, los nombres no se encuentran escritos en el mismo formato, por lo que se deberá realizar un fuzzy merge.</p>
 
 </div>
@@ -18987,17 +19214,18 @@ memory usage: 5.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1435]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1512]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># los nombres no se encuentran en el mismo formato, por lo que se deberá realizar un fuzzy merge</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Eliminando espacios al inicio y al final</span>
 <span class="n">Laureates_Nominees_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="o">=</span><span class="n">Laureates_Nominees_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="o">=</span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
+<span class="c1"># Creando sets con los elementos de la columna 'Laureate' en ambos DFs</span>
 <span class="n">Laureates_Nominees_set</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">Laureates_Nominees_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="p">)</span>
 <span class="n">Affiliation_set</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="p">)</span>
 
-<span class="c1"># Tomar un nombre en Affiliation_set y buscar el más similar en Laureates_set</span>
+<span class="c1"># Tomar un nombre en Affiliation_set y buscar el más similar en Laureates_set (en un 86% de coincidencia o más)</span>
 <span class="kn">from</span> <span class="nn">thefuzz</span> <span class="kn">import</span> <span class="n">process</span> <span class="k">as</span> <span class="n">fz</span>
 <span class="p">[(</span><span class="n">f</span><span class="p">,</span><span class="n">fz</span><span class="o">.</span><span class="n">extractOne</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">Laureates_Nominees_set</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">Affiliation_set</span><span class="p">)</span>
    <span class="k">if</span> <span class="n">fz</span><span class="o">.</span><span class="n">extractOne</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">Laureates_Nominees_set</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">86</span><span class="p">]</span>
@@ -19018,7 +19246,7 @@ memory usage: 5.1+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1435]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1512]:</div>
 
 
 
@@ -19205,7 +19433,7 @@ memory usage: 5.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1436]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1513]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Cambiando los nombres de los ganadores de la columna 'Laureate' en Affiliation_DF </span>
@@ -19231,7 +19459,7 @@ memory usage: 5.1+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1436]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1513]:</div>
 
 
 
@@ -19300,7 +19528,7 @@ memory usage: 5.1+ KB
       <th>185</th>
       <td>Carolyn Bertozzi</td>
       <td>2022</td>
-      <td>Stanford University,Howard Hughes Medical Inst...</td>
+      <td>Howard Hughes Medical Institute,Stanford Unive...</td>
     </tr>
     <tr>
       <th>186</th>
@@ -19343,10 +19571,10 @@ memory usage: 5.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1437]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1514]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Nombres faltantes</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Nombres faltantes</span>
 <span class="c1"># Nota: Affiliation_DF tiene 190 filas y Laureates_Nominees_DF, 194 (no hay información de afiliación de todos los ganadores)</span>
 <span class="n">Laureates_Nominees_set</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">Laureates_Nominees_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="p">)</span>
 <span class="n">Affiliation_set2</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="p">)</span>
@@ -19370,7 +19598,7 @@ memory usage: 5.1+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1437]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1514]:</div>
 
 
 
@@ -19410,31 +19638,31 @@ memory usage: 5.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1438]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1515]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Corrigiendo manualmente los nombres faltantes (hay errores en algunos resultados y estos han sido señalados)</span>
-<span class="n">changesAff_Laureate2</span><span class="o">=</span> <span class="p">{</span><span class="s1">'Adolf Butenandt'</span><span class="p">:</span> <span class="s1">'Adolf Friedrich Johann Butenandt'</span><span class="p">,</span> <span class="c1">#corrección</span>
+<span class="n">changesAff_Laureate2</span><span class="o">=</span> <span class="p">{</span><span class="s1">'Adolf Butenandt'</span><span class="p">:</span> <span class="s1">'Adolf Friedrich Johann Butenandt'</span><span class="p">,</span> <span class="c1">#corrección manual</span>
  <span class="s1">'Adolf Windaus'</span><span class="p">:</span> <span class="s1">'Adolf Otto Reinhold Windaus'</span><span class="p">,</span>
  <span class="s1">'Archer Martin'</span><span class="p">:</span> <span class="s1">'Archer John Porter Martin'</span><span class="p">,</span>
  <span class="s1">'Arne Tiselius'</span><span class="p">:</span> <span class="s1">'Arne Wilhelm Kaurin Tiselius'</span><span class="p">,</span>
  <span class="s1">'Derek Barton'</span><span class="p">:</span> <span class="s1">'Derek H. R. Barton'</span><span class="p">,</span>
  <span class="s1">'Dorothy Hodgkin'</span><span class="p">:</span> <span class="s1">'Dorothy Crowfoot Hodgkin'</span><span class="p">,</span>
  <span class="s1">'Edwin McMillan'</span><span class="p">:</span> <span class="s1">'Edwin Mattison McMillan'</span><span class="p">,</span>
- <span class="s1">'Hans von Euler-Chelpin'</span><span class="p">:</span> <span class="s1">'Hans Karl August Simon von Euler-Chelpin'</span><span class="p">,</span> <span class="c1">#corrección</span>
- <span class="s1">'Harold Urey'</span><span class="p">:</span> <span class="s1">'Harold Clayton Urey'</span><span class="p">,</span> <span class="c1">#corrección</span>
+ <span class="s1">'Hans von Euler-Chelpin'</span><span class="p">:</span> <span class="s1">'Hans Karl August Simon von Euler-Chelpin'</span><span class="p">,</span> <span class="c1">#corrección manual</span>
+ <span class="s1">'Harold Urey'</span><span class="p">:</span> <span class="s1">'Harold Clayton Urey'</span><span class="p">,</span> <span class="c1">#corrección manual</span>
  <span class="s1">'Harry Kroto'</span><span class="p">:</span> <span class="s1">'Sir Harold W. Kroto'</span><span class="p">,</span>
  <span class="s1">'James B. Sumner'</span><span class="p">:</span> <span class="s1">'James Batcheller Sumner'</span><span class="p">,</span>
  <span class="s1">'Jens Christian Skou'</span><span class="p">:</span> <span class="s1">'Jens C. Skou'</span><span class="p">,</span>
- <span class="s1">'John Cornforth'</span><span class="p">:</span> <span class="s1">'John Warcup Cornforth'</span><span class="p">,</span> <span class="c1">#corrección</span>
+ <span class="s1">'John Cornforth'</span><span class="p">:</span> <span class="s1">'John Warcup Cornforth'</span><span class="p">,</span> <span class="c1">#corrección manual</span>
  <span class="s1">'John Kendrew'</span><span class="p">:</span> <span class="s1">'John Cowdery Kendrew'</span><span class="p">,</span>
  <span class="s1">'Max Perutz'</span><span class="p">:</span> <span class="s1">'Max Ferdinand Perutz'</span><span class="p">,</span>
  <span class="s1">'Nikolay Semyonov'</span><span class="p">:</span> <span class="s1">'Nikolay Nikolaevich Semenov'</span><span class="p">,</span>
  <span class="s1">'Otto Diels'</span><span class="p">:</span> <span class="s1">'Otto Paul Hermann Diels'</span><span class="p">,</span>
- <span class="s1">'Robert Curl'</span><span class="p">:</span> <span class="s1">'Robert F. Curl Jr.'</span><span class="p">,</span> <span class="c1">#corrección</span>
+ <span class="s1">'Robert Curl'</span><span class="p">:</span> <span class="s1">'Robert F. Curl Jr.'</span><span class="p">,</span> <span class="c1">#corrección manual</span>
  <span class="s1">'Venki Ramakrishnan'</span><span class="p">:</span> <span class="s1">'Venkatraman Ramakrishnan'</span><span class="p">,</span>
  <span class="s1">'Walther Nernst'</span><span class="p">:</span> <span class="s1">'Walther Hermann Nernst'</span><span class="p">,</span>
- <span class="s1">'William Giauque'</span><span class="p">:</span> <span class="s1">'William Francis Giauque'</span><span class="p">}</span> <span class="c1">#corrección</span>
+ <span class="s1">'William Giauque'</span><span class="p">:</span> <span class="s1">'William Francis Giauque'</span><span class="p">}</span> <span class="c1">#corrección manual</span>
 
 <span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=</span><span class="n">changesAff_Laureate2</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">Affiliation_DF</span>
@@ -19455,7 +19683,7 @@ memory usage: 5.1+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1438]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1515]:</div>
 
 
 
@@ -19524,7 +19752,7 @@ memory usage: 5.1+ KB
       <th>185</th>
       <td>Carolyn Bertozzi</td>
       <td>2022</td>
-      <td>Stanford University,Howard Hughes Medical Inst...</td>
+      <td>Howard Hughes Medical Institute,Stanford Unive...</td>
     </tr>
     <tr>
       <th>186</th>
@@ -19567,14 +19795,16 @@ memory usage: 5.1+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1439]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1517]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Verificando que todos los nombres hayan sido reemplazados con sus análogos</span>
 <span class="n">Laureates_Nominees_set</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">Laureates_Nominees_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="p">)</span>
 <span class="n">Affiliation_set3</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">Laureate</span><span class="p">)</span>
 
-<span class="n">Affiliation_set3</span><span class="o">-</span><span class="n">Laureates_Nominees_set</span>  <span class="c1"># Ya se han reemplazado todos</span>
+<span class="n">Affiliation_set3</span><span class="o">-</span><span class="n">Laureates_Nominees_set</span>  
+
+<span class="c1"># Ya se han reemplazado todos, pues el set está vacío</span>
 </pre></div>
 
      </div>
@@ -19592,7 +19822,7 @@ memory usage: 5.1+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1439]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1517]:</div>
 
 
 
@@ -19607,15 +19837,27 @@ memory usage: 5.1+ KB
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="d.2.-c)-Uni%C3%B3n-de-Leaureates_Nominees_DF-y-Affiliation_DF">d.2. c) Uni&#243;n de Leaureates_Nominees_DF y Affiliation_DF<a class="anchor-link" href="#d.2.-c)-Uni%C3%B3n-de-Leaureates_Nominees_DF-y-Affiliation_DF">&#182;</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1440]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1518]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">info</span><span class="p">(),</span><span class="n">Laureates_Nominees_DF</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Verificando que los datos de la columna "Laureate" son del mismo tipo en ambos DF</span>
+<span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">info</span><span class="p">(),</span><span class="n">Laureates_Nominees_DF</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -19657,7 +19899,7 @@ Data columns (total 7 columns):
  2   Laureate          202 non-null    object
  3   Rationale         202 non-null    object
  4   Birth_year        202 non-null    object
- 5   Death_year        202 non-null    object
+ 5   Death_year        131 non-null    object
  6   Country_of_birth  202 non-null    object
 dtypes: int64(1), object(6)
 memory usage: 11.2+ KB
@@ -19668,7 +19910,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1440]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1518]:</div>
 
 
 
@@ -19688,7 +19930,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1441]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1519]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Finalmente: Merging</span>
@@ -19711,7 +19953,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1441]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1519]:</div>
 
 
 
@@ -19827,7 +20069,7 @@ memory usage: 11.2+ KB
       <td>2022</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -19839,7 +20081,7 @@ memory usage: 11.2+ KB
       <td>2022</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -19851,7 +20093,7 @@ memory usage: 11.2+ KB
       <td>2023</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1961</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -19863,7 +20105,7 @@ memory usage: 11.2+ KB
       <td>2023</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1943</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>United States</td>
     </tr>
     <tr>
@@ -19875,7 +20117,7 @@ memory usage: 11.2+ KB
       <td>2023</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>1945</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Russia</td>
     </tr>
   </tbody>
@@ -19895,7 +20137,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1442]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1520]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Laureates_Nominees_Affiliation_DF</span><span class="o">=</span><span class="n">Affiliation_DF</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">Laureates_Nominees_DF</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">'right'</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s1">'Laureate'</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s1">'Laureate'</span><span class="p">)</span>
@@ -19924,7 +20166,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1442]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1520]:</div>
 
 
 
@@ -20030,7 +20272,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20041,7 +20283,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20052,7 +20294,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Moungi G. Bawendi</td>
       <td>1961</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Massachusetts Institute of Technology</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>United States</td>
@@ -20063,7 +20305,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Louis E. Brus</td>
       <td>1943</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Columbia University</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>United States</td>
@@ -20074,7 +20316,7 @@ memory usage: 11.2+ KB
       <td>NaN</td>
       <td>Alexey Ekimov</td>
       <td>1945</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>NaN</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>Russia</td>
@@ -20096,7 +20338,7 @@ memory usage: 11.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1443]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1521]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Revisando si hay duplicados en ciertas filas</span>
@@ -20118,21 +20360,7 @@ memory usage: 11.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>C:\Users\Patiy Li Yang\anaconda3\envs\Ciencia_de_datos_espaciales\Lib\site-packages\IPython\core\displayhook.py:281: UserWarning: Output cache limit (currently 1000 entries) hit.
-Flushing oldest 200 entries.
-  warn(&#39;Output cache limit (currently {sz} entries) hit.\n&#39;
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1443]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1521]:</div>
 
 
 
@@ -20216,7 +20444,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Scripps Research</td>
       <td>"for his work on chirally catalysed oxidation ...</td>
       <td>United States</td>
@@ -20227,7 +20455,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Scripps Research</td>
       <td>"for his work on chirally catalysed oxidation ...</td>
       <td>United States</td>
@@ -20238,7 +20466,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20249,7 +20477,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20270,7 +20498,7 @@ Flushing oldest 200 entries.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1444]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1522]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Eliminando una de las filas duplicadas</span>
@@ -20296,7 +20524,7 @@ Flushing oldest 200 entries.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1444]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1522]:</div>
 
 
 
@@ -20402,7 +20630,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>Morten Meldal</td>
       <td>1954</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>University of Copenhagen</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>Denmark</td>
@@ -20413,7 +20641,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>United States</td>
@@ -20424,7 +20652,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>Moungi G. Bawendi</td>
       <td>1961</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Massachusetts Institute of Technology</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>United States</td>
@@ -20435,7 +20663,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>Louis E. Brus</td>
       <td>1943</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Columbia University</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>United States</td>
@@ -20446,7 +20674,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>Alexey Ekimov</td>
       <td>1945</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>NaN</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>Russia</td>
@@ -20468,7 +20696,7 @@ Flushing oldest 200 entries.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1445]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1523]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Revisando nuevamente si hay duplicados en ciertas filas: No hay</span>
@@ -20490,7 +20718,7 @@ Flushing oldest 200 entries.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1445]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1523]:</div>
 
 
 
@@ -20542,7 +20770,8 @@ Flushing oldest 200 entries.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="d)-Uni%C3%B3n-(merging)-de-Laureates_Nominees_Affiliation_DF-con-el-archivo-adjunto">d) Uni&#243;n (merging) de Laureates_Nominees_Affiliation_DF con el archivo adjunto<a class="anchor-link" href="#d)-Uni%C3%B3n-(merging)-de-Laureates_Nominees_Affiliation_DF-con-el-archivo-adjunto">&#182;</a></h2>
+<h2 id="e)-Uni%C3%B3n-(merging)-de-Laureates_Nominees_Affiliation_DF-con-el-archivo-adjunto">e) Uni&#243;n (merging) de Laureates_Nominees_Affiliation_DF con el archivo adjunto<a class="anchor-link" href="#e)-Uni%C3%B3n-(merging)-de-Laureates_Nominees_Affiliation_DF-con-el-archivo-adjunto">&#182;</a></h2><p>Columnas a emplear para el "merging": 'Country_of_birth' y 'Country'</p>
+
 </div>
 </div>
 </div>
@@ -20551,10 +20780,10 @@ Flushing oldest 200 entries.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1446]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1534]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Nobel_Chemistry_DF</span><span class="o">=</span><span class="n">Laureates_Nominees_Affiliation_DF</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Nobel_Chemistry_DF</span> <span class="o">=</span> <span class="n">Laureates_Nominees_Affiliation_DF</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">country_isos</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'https://github.com/Ciencia-de-datos-espaciales-2023-2/Ejercicio_2/raw/main/country_isos.xlsx'</span><span class="p">)</span>
 <span class="n">country_isos</span>
@@ -20575,7 +20804,7 @@ Flushing oldest 200 entries.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1446]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1534]:</div>
 
 
 
@@ -20706,12 +20935,24 @@ Flushing oldest 200 entries.
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="e.1)-Fuzzy-merging-de-Nobel_Chemistry_DF-y-Affiliation_DF">e.1) Fuzzy merging de Nobel_Chemistry_DF y Affiliation_DF<a class="anchor-link" href="#e.1)-Fuzzy-merging-de-Nobel_Chemistry_DF-y-Affiliation_DF">&#182;</a></h3><p><strong>Problema</strong>: Los nombres de los países no se encuentran escritos en el mismo formato, por lo que se deberá realizar un fuzzy merge.</p>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1447]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1527]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fuzzy merge de los nombres de los países de Nobel_Chemistry_DF y country_isos</span>
@@ -20740,7 +20981,7 @@ Flushing oldest 200 entries.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1448]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1528]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Nombres faltantes</span>
@@ -20770,7 +21011,7 @@ Flushing oldest 200 entries.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1448]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1528]:</div>
 
 
 
@@ -20799,22 +21040,30 @@ Flushing oldest 200 entries.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1449]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1536]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Algunos países tienen que reescribirse manualmebte, porque algunos ya no existen (ejm: Yugoslavia,Czechoslovakia)</span>
-<span class="c1"># Se han señalado las que se han corregido a mano</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Ciertos países tienen que reescribirse manualmente, porque algunos ya no existen (ejm: Yugoslavia,Czechoslovakia)</span>
+<span class="c1"># Se han señalado las que se han corregido a mano. Para las correciones, se ha tenido que revisar la fuente 1.</span>
+
 <span class="n">changes_Country3</span><span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'Czechoslovakia'</span><span class="p">:</span> <span class="s1">'CZECHIA'</span><span class="p">,</span> <span class="c1">#corrección: Czechoslovakia es actualmente un territorio que comprende República Checa y eslovakia, pero Jaroslav Heyrovský nació en Praga, perteneciente a República Checa</span>
- <span class="s1">'Israel'</span><span class="p">:</span> <span class="s1">'ISRAEL'</span><span class="p">,</span> <span class="c1">#NOTA: Israel no se encuentra en el el archivo adjunto</span>
- <span class="s1">'Kingdom of Yugoslavia'</span><span class="p">:</span> <span class="s1">'CROATIA'</span><span class="p">,</span> <span class="c1"># corrección Leopold Ružička nació en Vukovar, Yugoslavia (actual CROACIA)</span>
- <span class="s1">'Not awarded'</span><span class="p">:</span> <span class="s1">'Not awarded'</span><span class="p">,</span> <span class="c1">#corrección</span>
+    <span class="s1">'Czechoslovakia'</span><span class="p">:</span> <span class="s1">'CZECHIA'</span><span class="p">,</span> 
+    <span class="c1">#corrección: Czechoslovakia es actualmente un territorio que comprende República Checa y eslovakia, </span>
+    <span class="c1"># pero Jaroslav Heyrovský nació en Praga, perteneciente a República Checa</span>
+ <span class="s1">'Israel'</span><span class="p">:</span> <span class="s1">'ISRAEL'</span><span class="p">,</span> 
+    <span class="c1">#NOTA: Israel no se encuentra en el el archivo adjunto</span>
+ <span class="s1">'Kingdom of Yugoslavia'</span><span class="p">:</span> <span class="s1">'CROATIA'</span><span class="p">,</span> 
+    <span class="c1"># corrección Leopold Ružička nació en Vukovar, Yugoslavia (actual CROACIA)</span>
+ <span class="s1">'Not awarded'</span><span class="p">:</span> <span class="s1">'Not awarded'</span><span class="p">,</span> 
+    <span class="c1">#corrección</span>
  <span class="s1">'Russia'</span><span class="p">:</span> <span class="s1">'RUSSIAN FEDERATION (THE)'</span><span class="p">,</span>
- <span class="s1">'Soviet Union'</span><span class="p">:</span> <span class="s1">'RUSSIAN FEDERATION (THE)'</span><span class="p">,</span> <span class="c1">#corrección: Nikolay Nikolaevich Semenov nació en Saratov Oblast, Russia (antigua Unión Soviética)</span>
+ <span class="s1">'Soviet Union'</span><span class="p">:</span> <span class="s1">'RUSSIAN FEDERATION (THE)'</span><span class="p">,</span> 
+    <span class="c1">#corrección: Nikolay Nikolaevich Semenov nació en Saratov Oblast, Russia (antigua Unión Soviética)</span>
  <span class="s1">'United Kingdom'</span><span class="p">:</span> <span class="s1">'UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND (THE)'</span><span class="p">,</span>
  <span class="s1">'United States'</span><span class="p">:</span> <span class="s1">'UNITED STATES MINOR OUTLYING ISLANDS (THE)'</span><span class="p">,</span>
  <span class="s1">'West Germany'</span><span class="p">:</span> <span class="s1">'GERMANY'</span><span class="p">,</span> 
- <span class="s1">'Yugoslavia'</span><span class="p">:</span> <span class="s1">'BOSNIA AND HERZEGOVINA'</span><span class="p">}</span> <span class="c1">#corrección: Vladimir Prelog nació en  Sarajevo, Yugoslavia (actual Bosnia y Hersegovina)</span>
+ <span class="s1">'Yugoslavia'</span><span class="p">:</span> <span class="s1">'BOSNIA AND HERZEGOVINA'</span><span class="p">}</span> 
+    <span class="c1">#corrección: Vladimir Prelog nació en  Sarajevo, Yugoslavia (actual Bosnia y Hersegovina)</span>
 
 <span class="n">Nobel_Chemistry_DF</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=</span><span class="n">changes_Country3</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -20824,12 +21073,23 @@ Flushing oldest 200 entries.
 </div>
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="e.2)-Merging-de-Nobel_Chemistry_DF-y-Affiliation_DF">e.2) Merging de Nobel_Chemistry_DF y Affiliation_DF<a class="anchor-link" href="#e.2)-Merging-de-Nobel_Chemistry_DF-y-Affiliation_DF">&#182;</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1460]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1537]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merging</span>
@@ -20856,7 +21116,7 @@ Flushing oldest 200 entries.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1460]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1537]:</div>
 
 
 
@@ -20903,11 +21163,11 @@ Flushing oldest 200 entries.
       <td>1911</td>
       <td>Humboldt University of Berlin</td>
       <td>"[for his] discovery of the laws of chemical d...</td>
-      <td>NETHERLANDS (THE)</td>
-      <td>The Kingdom of the Netherlands</td>
-      <td>.nl</td>
-      <td>NL</td>
-      <td>NLD</td>
+      <td>Netherlands</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
@@ -20918,11 +21178,11 @@ Flushing oldest 200 entries.
       <td>1919</td>
       <td>Humboldt University of Berlin</td>
       <td>"[for] his work on sugar and purine syntheses"</td>
-      <td>GERMANY</td>
-      <td>The Federal Republic of Germany</td>
-      <td>.de</td>
-      <td>DE</td>
-      <td>DEU</td>
+      <td>Germany</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
@@ -20933,11 +21193,11 @@ Flushing oldest 200 entries.
       <td>1927</td>
       <td>Stockholm University</td>
       <td>"[for] his electrolytic theory of dissociation"</td>
-      <td>SWEDEN</td>
-      <td>The Kingdom of Sweden</td>
-      <td>.se</td>
-      <td>SE</td>
-      <td>SWE</td>
+      <td>Sweden</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
@@ -20963,11 +21223,11 @@ Flushing oldest 200 entries.
       <td>1917</td>
       <td>Ludwig Maximilian University of Munich</td>
       <td>"[for] the advancement of organic chemistry an...</td>
-      <td>GERMANY</td>
-      <td>The Federal Republic of Germany</td>
-      <td>.de</td>
-      <td>DE</td>
-      <td>DEU</td>
+      <td>Germany</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>...</th>
@@ -20990,14 +21250,14 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>Morten Meldal</td>
       <td>1954</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>University of Copenhagen</td>
       <td>"for the development of click chemistry and bi...</td>
-      <td>DENMARK</td>
-      <td>The Kingdom of Denmark</td>
-      <td>.dk</td>
-      <td>DK</td>
-      <td>DNK</td>
+      <td>Denmark</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>198</th>
@@ -21005,7 +21265,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>K. Barry Sharpless</td>
       <td>1941</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Scripps Research</td>
       <td>"for the development of click chemistry and bi...</td>
       <td>UNITED STATES MINOR OUTLYING ISLANDS (THE)</td>
@@ -21020,7 +21280,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>Moungi G. Bawendi</td>
       <td>1961</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Massachusetts Institute of Technology</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>UNITED STATES MINOR OUTLYING ISLANDS (THE)</td>
@@ -21035,7 +21295,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>Louis E. Brus</td>
       <td>1943</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>Columbia University</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>UNITED STATES MINOR OUTLYING ISLANDS (THE)</td>
@@ -21050,7 +21310,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
       <td>Alexey Ekimov</td>
       <td>1945</td>
-      <td>Alive</td>
+      <td>None</td>
       <td>NaN</td>
       <td>"for the discovery and synthesis of quantum dots"</td>
       <td>RUSSIAN FEDERATION (THE)</td>
@@ -21076,51 +21336,7 @@ Flushing oldest 200 entries.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1461]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Nobel_Chemistry_countryisos_DF</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1461]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Index([&#39;Year_of_award&#39;, &#39;Nominees&#39;, &#39;Laureate&#39;, &#39;Birth_year&#39;, &#39;Death_year&#39;,
-       &#39;Affiliation&#39;, &#39;Rationale&#39;, &#39;Country_of_birth&#39;, &#39;Officialstatename&#39;,
-       &#39;InternetccTLD&#39;, &#39;iso2&#39;, &#39;iso3&#39;],
-      dtype=&#39;object&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1462]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1538]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Transformación de la tabla a horizontal para clasificar a los ganadores por país de nacimiento</span>
@@ -21148,7 +21364,7 @@ Flushing oldest 200 entries.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1462]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1538]:</div>
 
 
 
@@ -21228,7 +21444,7 @@ Flushing oldest 200 entries.
   </thead>
   <tbody>
     <tr>
-      <th>ARGENTINA</th>
+      <th>Argentina</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21252,7 +21468,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>AUSTRALIA</th>
+      <th>Australia</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21276,31 +21492,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>AUSTRIA</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>BELGIUM</th>
+      <th>Austria</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21348,7 +21540,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>CANADA</th>
+      <th>Belgium</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21420,7 +21612,31 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>DENMARK</th>
+      <th>Canada</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21444,7 +21660,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>FINLAND</th>
+      <th>Finland</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21468,7 +21684,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>FRANCE</th>
+      <th>France</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21494,6 +21710,30 @@ Flushing oldest 200 entries.
     <tr>
       <th>GERMANY</th>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>NaN</td>
       <td>Hermann Emil Fischer</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21516,7 +21756,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>HUNGARY</th>
+      <th>Hungary</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21564,7 +21804,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>ITALY</th>
+      <th>Italy</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21588,7 +21828,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>JAPAN</th>
+      <th>Japan</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21612,7 +21852,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>MEXICO</th>
+      <th>Mexico</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21636,7 +21876,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>NETHERLANDS (THE)</th>
+      <th>Netherlands</th>
       <td>Jacobus Henricus van 't Hoff</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21660,7 +21900,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>NORWAY</th>
+      <th>Norway</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21708,7 +21948,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>POLAND</th>
+      <th>Poland</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21756,7 +21996,7 @@ Flushing oldest 200 entries.
       <td>Alexey Ekimov</td>
     </tr>
     <tr>
-      <th>SWEDEN</th>
+      <th>Sweden</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>Svante August Arrhenius</td>
@@ -21780,7 +22020,7 @@ Flushing oldest 200 entries.
       <td>NaN</td>
     </tr>
     <tr>
-      <th>SWITZERLAND</th>
+      <th>Switzerland</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -21853,7 +22093,7 @@ Flushing oldest 200 entries.
     </tr>
   </tbody>
 </table>
-<p>26 rows × 123 columns</p>
+<p>27 rows × 123 columns</p>
 </div>
 </div>
 
